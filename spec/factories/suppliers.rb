@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :supplier do
-    name { "MyString" }
-    photo { "MyString" }
+    name { 'EBS proveedor' }
+    photo { 'foto proveedor' }
+    address
   end
 end

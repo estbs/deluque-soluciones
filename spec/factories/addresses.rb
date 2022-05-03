@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :address do
-    street { "MyString" }
-    city { "MyString" }
-    state { "MyString" }
-    country { "MyString" }
+    street { '123' }
+    city { 'Medellin' }
+    state { 'Antioquia' }
+    country { 'Colombia' }
   end
 end
