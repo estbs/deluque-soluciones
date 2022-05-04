@@ -1,0 +1,25 @@
+h1 Show supplier
+
+.container
+  .row
+    .col
+      strong Name:
+      = " #{@supplier.name}"
+  br
+  h6 Address
+  .row
+    .col
+      strong Street:
+      = " #{@supplier.address.street}"
+  .row
+    .col
+      strong City:
+      = " #{@supplier.address.city}"
+  .row
+    .col
+      strong State:
+      = " #{@supplier.address.state}"
+  .row
+    .col
+      strong Country:
+      = " #{@supplier.address.country}"
