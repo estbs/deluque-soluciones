@@ -41,6 +41,18 @@ RSpec.describe SuppliersController, type: :controller do
     end
   end
 
+  describe 'GET new' do
+    before { get :new }
+
+    it 'Assigns @supplier' do
+      expect(assigns(:supplier)).to be_a_new(Supplier)
+    end
+
+    it 'Renders the new template' do
+      expect(response).to render_template(:new)
+    end
+  end
+
   describe 'POST create' do
     subject { post :create, params: params }
 
