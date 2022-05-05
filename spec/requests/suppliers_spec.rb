@@ -81,4 +81,22 @@ RSpec.describe SuppliersController, type: :controller do
       end
     end
   end
+
+  describe 'GET show' do
+    before { get :show, params: params }
+
+    let(:params) do
+      { id: supplier.id }
+    end
+
+    let(:supplier) { create(:supplier) }
+
+    it 'Assigns @supplier' do
+      expect(assigns(:supplier)).to eq(supplier)
+    end
+
+    it 'Renders the show template' do
+      expect(response).to render_template(:show)
+    end
+  end
 end
