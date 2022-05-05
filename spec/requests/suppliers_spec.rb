@@ -40,4 +40,33 @@ RSpec.describe SuppliersController, type: :controller do
       expect(response).to render_template(:show)
     end
   end
+
+  describe 'POST create' do
+    subject { post :create, params: params }
+
+    context 'Valid params' do
+      let(:address) { { street: 'street', city: 'city', state: 'state', country: 'country' } }
+      let(:params) do
+        {
+          supplier: { name: 'EBS supplier', address_attributes: address }
+        }
+      end
+
+      it 'Creates a new supplier' do
+        expect { subject }.to change(Supplier, :count).from(0).to(1)
+      end
+    end
+
+    context 'Invalid params' do
+      let(:params) do
+        {
+          supplier: { name: '' }
+        }
+      end
+
+      it 'does not create a new supplier' do
+        expect { subject }.not_to change(Supplier, :count)
+      end
+    end
+  end
 end
