@@ -1,0 +1,11 @@
+= simple_nested_form_for @supplier do |form|
+  = form.input :name
+  = form.input :photo
+
+  h5 Address
+  = form.fields_for :address do |address_form|
+    = address_form.input :street
+    = address_form.input :city
+    = address_form.input :state
+    = address_form.input :country, :as => :string
+  = form.button :submit, class: 'btn btn-primary'
