@@ -22,6 +22,19 @@ class SuppliersController < ApplicationController
     end
   end
 
+  def edit
+    @supplier = Supplier.find(params[:id])
+  end
+
+  def update
+    @supplier = Supplier.find(params[:id])
+    if @supplier.update(supplier_params)
+      redirect_to supplier_path(@supplier)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def supplier_params
@@ -29,7 +42,7 @@ class SuppliersController < ApplicationController
           .permit(
             :name,
             :photo,
-            address_attributes: %i[street city state country]
+            address_attributes: %i[id street city state country]
           )
   end
 end

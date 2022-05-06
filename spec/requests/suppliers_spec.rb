@@ -99,4 +99,51 @@ RSpec.describe SuppliersController, type: :controller do
       expect(response).to render_template(:show)
     end
   end
+
+  describe 'GET edit' do
+    subject { get :edit, params: params }
+
+    let(:params) { { id: supplier.id } }
+
+    let(:supplier) { create(:supplier) }
+
+    it 'Assigns @supplier' do
+      expect(assigns(:supplier)).to eq(supplier)
+    end
+
+    it 'Renders the edit template' do
+      expect(response).to render_template(:edit)
+    end
+  end
+
+  describe 'PUT update' do
+    let(:supplier) { create(:supplier, name: 'test supllier 1', address_attributes: address1) }
+    let(:address1) { create(:address, street: 'street1', city: 'city1', state: 'state1', country: 'country1') }
+    let(:address2) { create(:address, street: 'street2', city: 'city2', state: 'state2', country: 'country2') }
+
+    context 'Valid params' do
+      subject { put :update, params: params }
+      let(:params) do
+        { id: supplier.id, supplier: { name: 'test supp 1', address_attributes: address2 } }
+      end
+
+      it 'Updates supplier' do
+        expect{ subject }.to change { supplier.reload.name }
+          .from('test supplier 1').to('test supp 1')
+          .and change { supplier.reload.address }
+          .from(address1).to(address2)
+      end
+    end
+
+    context 'Invalid params' do
+      subject { put :update, params: params }
+      let(:params) do
+        { id: supplier.id, supplier: { name: '' } }
+      end
+
+      it 'does not update supplier' do
+        expect { subject }.not_to change { supplier.reload.name }
+      end
+    end
+  end
 end

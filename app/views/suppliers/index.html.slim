@@ -18,3 +18,4 @@ table.table.table-striped
         td = supplier.address.country
         td
           = link_to('Show', supplier_path(supplier), class: 'btn btn-primary')
+          = link_to('Edit', edit_supplier_path(supplier), class: 'btn btn-primary')
