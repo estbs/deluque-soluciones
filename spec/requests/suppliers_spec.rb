@@ -101,9 +101,11 @@ RSpec.describe SuppliersController, type: :controller do
   end
 
   describe 'GET edit' do
-    subject { get :edit, params: params }
+    before { get :edit, params: params }
 
-    let(:params) { { id: supplier.id } }
+    let(:params) do
+      { id: supplier.id }
+    end
 
     let(:supplier) { create(:supplier) }
 
