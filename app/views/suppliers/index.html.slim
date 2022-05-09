@@ -18,5 +18,5 @@ table.table.table-striped
         td = supplier.address.country
         td
           = link_to('Show', supplier_path(supplier), class: 'btn btn-primary')
-          = link_to('Edit', edit_supplier_path(supplier), class: 'btn btn-primary')
-          = link_to('Delete', supplier_path(supplier), class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" })
+          = link_to('Edit', edit_supplier_path(supplier), class: 'btn btn-primary ms-1')
+          = link_to('Delete', supplier_path(supplier), class: 'btn btn-danger ms-1', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" })
