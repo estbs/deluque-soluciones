@@ -119,21 +119,39 @@ RSpec.describe SuppliersController, type: :controller do
   end
 
   describe 'PUT update' do
-    let(:supplier) { create(:supplier, name: 'test supllier 1', address_attributes: address1) }
-    let(:address1) { create(:address, street: 'street1', city: 'city1', state: 'state1', country: 'country1') }
-    let(:address2) { create(:address, street: 'street2', city: 'city2', state: 'state2', country: 'country2') }
+    let(:supplier) do
+      create(
+        :supplier,
+        name: 'test supplier 1',
+        address_attributes: {
+          street: 'street1',
+          city: 'city1',
+          state: 'state1',
+          country: 'country1'
+        }
+      )
+    end
 
     context 'Valid params' do
       subject { put :update, params: params }
       let(:params) do
-        { id: supplier.id, supplier: { name: 'test supp 1', address_attributes: address2 } }
+        {
+          id: supplier.id,
+          supplier: {
+            name: 'test supp 1',
+            address_attributes: {
+              id: supplier.address.id,
+              street: 'street2'
+            }
+          }
+        }
       end
 
       it 'Updates supplier' do
-        expect{ subject }.to change { supplier.reload.name }
+        expect { subject }.to change { supplier.reload.name }
           .from('test supplier 1').to('test supp 1')
-          .and change { supplier.reload.address }
-          .from(address1).to(address2)
+          .and change { supplier.reload.address.street }
+          .from('street1').to('street2')
       end
     end
 
