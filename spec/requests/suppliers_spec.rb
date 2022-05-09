@@ -99,4 +99,84 @@ RSpec.describe SuppliersController, type: :controller do
       expect(response).to render_template(:show)
     end
   end
+
+  describe 'GET edit' do
+    before { get :edit, params: params }
+
+    let(:params) do
+      { id: supplier.id }
+    end
+
+    let(:supplier) { create(:supplier) }
+
+    it 'Assigns @supplier' do
+      expect(assigns(:supplier)).to eq(supplier)
+    end
+
+    it 'Renders the edit template' do
+      expect(response).to render_template(:edit)
+    end
+  end
+
+  describe 'PUT update' do
+    let(:supplier) do
+      create(
+        :supplier,
+        name: 'test supplier 1',
+        address_attributes: {
+          street: 'street1',
+          city: 'city1',
+          state: 'state1',
+          country: 'country1'
+        }
+      )
+    end
+
+    context 'Valid params' do
+      subject { put :update, params: params }
+      let(:params) do
+        {
+          id: supplier.id,
+          supplier: {
+            name: 'test supp 1',
+            address_attributes: {
+              id: supplier.address.id,
+              street: 'street2'
+            }
+          }
+        }
+      end
+
+      it 'Updates supplier' do
+        expect { subject }.to change { supplier.reload.name }
+          .from('test supplier 1').to('test supp 1')
+          .and change { supplier.reload.address.street }
+          .from('street1').to('street2')
+      end
+    end
+
+    context 'Invalid params' do
+      subject { put :update, params: params }
+      let(:params) do
+        { id: supplier.id, supplier: { name: '' } }
+      end
+
+      it 'does not update supplier' do
+        expect { subject }.not_to change { supplier.reload.name }
+      end
+    end
+  end
+
+  describe 'DELETE destroy' do
+    subject { delete :destroy, params: params }
+    let!(:supplier) { create(:supplier) }
+
+    let(:params) do
+      { id: supplier.id }
+    end
+
+    it 'deletes supplier' do
+      expect { subject }.to change(Supplier, :count).from(1).to(0)
+    end
+  end
 end
