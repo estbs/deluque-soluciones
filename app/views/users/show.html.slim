@@ -1,0 +1,23 @@
+h1 Show user
+
+.container
+  .row
+    .col
+      strong Name:
+      = " #{@user.name}"
+  .row
+    .col
+      strong Phone number:
+      = " #{@user.phone_number}"
+  .row
+    .col
+      strong Identification type:
+      = " #{@user.identification_type}"
+  .row
+    .col
+      strong Identification number:
+      = " #{@user.identification_number}"
+  .row
+    .col
+      strong Email:
+      = " #{@user.email}"

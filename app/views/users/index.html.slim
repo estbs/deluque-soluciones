@@ -19,6 +19,6 @@ table.table.table-striped
         td = user.identification_number
         td = user.email
         td
-          = link_to('Show', class: 'btn btn-primary')
+          = link_to('Show', user_path(user), class: 'btn btn-primary')
           = link_to('Edit', class: 'btn btn-primary ms-1')
           = link_to('Delete', class: 'btn btn-danger ms-1', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" })

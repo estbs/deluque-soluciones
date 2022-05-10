@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   root 'suppliers#index'
 
   resources :suppliers
-  resources :users, only: %i[index]
+  resources :users, only: %i[index show]
 end
