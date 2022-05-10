@@ -64,6 +64,9 @@ RSpec.configure do |config|
 
   # Factory bot
   config.include FactoryBot::Syntax::Methods
+
+  # Devise
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
 
 Shoulda::Matchers.configure do |config|

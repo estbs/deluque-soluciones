@@ -15,5 +15,6 @@ html
     = javascript_include_tag "/javascripts/nested_form"
   body
     .container
-      = render "shared/nav"
+      = render "shared/messages"
+      = render "shared/nav" if user_signed_in?
       = yield
