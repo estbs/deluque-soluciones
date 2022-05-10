@@ -1,0 +1,9 @@
+h1 Edit user
+
+= simple_form_for @user do |form|
+  = form.input :name
+  = form.input :phone_number
+  = form.input :identification_type
+  = form.input :identification_number
+  = form.input :email
+  = form.button :submit, class: 'btn btn-primary'

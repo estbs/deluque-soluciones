@@ -70,4 +70,36 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+
+  describe 'GET edit' do
+    let(:user) { create(:user) }
+
+    let(:params) do
+      { id: user.id }
+    end
+
+    context 'When user is signed in' do
+      let(:user_logged) { create(:user) }
+      before do
+        sign_in(user_logged)
+        get :edit, params: params
+      end
+
+      it 'Assigns @user' do
+        expect(assigns(:user)).to eq(user)
+      end
+
+      it 'Renders the edit template' do
+        expect(response).to render_template(:edit)
+      end
+    end
+
+    context 'When user is not signed in' do
+      before { get :edit, params: params }
+
+      it 'Does not render the edit template' do
+        expect(response).not_to render_template(:edit)
+      end
+    end
+  end
 end
