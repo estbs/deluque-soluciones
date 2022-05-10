@@ -102,4 +102,47 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+
+  describe 'PUT update' do
+    subject { put :update, params: params }
+
+    let(:user) { create(:user, name: 'Esteban', phone_number: '3214567890') }
+    context 'When user is signed in' do
+      let(:user_logged) { create(:user) }
+      before { sign_in(user_logged) }
+
+      context 'with valid params' do
+        let(:params) do
+          { id: user.id, user: { name: 'Anamaria', phone_number: '3012345432' } }
+        end
+
+        it 'Changes the name and the phone number' do
+          expect { subject }.to change { user.reload.name }
+            .from('Esteban').to('Anamaria')
+            .and change { user.reload.phone_number }
+            .from('3214567890').to('3012345432')
+        end
+      end
+
+      context 'with invalid params' do
+        let(:params) do
+          { id: user.id, user: { name: '' } }
+        end
+
+        it 'does not change the name' do
+          expect { subject }.not_to change { user.reload.name }
+        end
+      end
+    end
+
+    context 'When user is not signed in' do
+      let(:params) do
+        { id: user.id, user: { name: 'Anamaria', phone_number: '3012345432' } }
+      end
+
+      it 'does not change the name' do
+        expect { subject }.not_to change { user.reload.name }
+      end
+    end
+  end
 end
