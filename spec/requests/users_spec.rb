@@ -145,4 +145,28 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE destroy' do
+    subject { delete :destroy, params: params }
+
+    let!(:user) { create(:user) }
+    let(:params) do
+      { id: user.id }
+    end
+
+    context 'When user is signed in' do
+      let(:user_logged) { create(:user) }
+      before { sign_in(user_logged) }
+
+      it 'Deletes the user' do
+        expect { subject }.to change(User, :count).from(2).to(1)
+      end
+    end
+
+    context 'When user is not signed in' do
+      it 'Does not delete the user' do
+        expect { subject }.not_to change(User, :count)
+      end
+    end
+  end
 end

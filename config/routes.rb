@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   root 'suppliers#index'
 
   resources :suppliers
-  resources :users, only: %i[index show edit update]
+  resources :users, only: %i[index show edit update destroy]
 end
