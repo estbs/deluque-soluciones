@@ -10,6 +10,7 @@ RSpec.describe Address, type: :model do
 
   describe 'associations' do
     it { is_expected.to have_one(:supplier) }
+    it { is_expected.to have_one(:user) }
   end
 
   describe 'validations' do

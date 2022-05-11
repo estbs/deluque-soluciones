@@ -9,6 +9,10 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column(:email) }
   end
 
+  describe 'associations' do
+    it { is_expected.to belong_to(:address) }
+  end
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:identification_type) }

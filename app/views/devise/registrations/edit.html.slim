@@ -5,7 +5,7 @@
         h2
           | Edit 
           = resource_name.to_s.humanize
-      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = simple_nested_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
         = f.error_notification
         .form-inputs
           .row.align-items-start
@@ -32,6 +32,20 @@
                 = f.input :password, hint: "leave it blank if you don't want to change it", required: false, input_html: { autocomplete: "new-password", class: 'form-control' }
               .form-outline.mb-4
                 = f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password", class: 'form-control' }
+        .row.align-items-start
+          h3 Address
+          = f.fields_for :address do |address_form|
+            .row
+              .col
+                .form-outline.mb-4
+                  = address_form.input :street
+                .form-outline.mb-4
+                  = address_form.input :state, required: true
+              .col
+                .form-outline.mb-4
+                  = address_form.input :city, required: true
+                .form-outline.mb-4
+                  = address_form.input :country, :as => :string, required: true
         .form-actions
           = f.button :submit, "Update", class: 'btn btn-primary btn-block mb-4'
       h3

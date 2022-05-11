@@ -3,9 +3,10 @@
     .card-body
       .card-title.text-center
         h2 Registration
-      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = simple_nested_form_for([resource, resource.with_address], url: registration_path(resource_name)) do |f|
         = f.error_notification
         .form-inputs
+          h3 Main Information
           .row.align-items-start
             .col
               .form-outline.mb-4
@@ -23,6 +24,20 @@
                 = f.input :identification_number, required: true, input_html: { class: 'form-control' }
               .form-outline.mb-4
                 = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password", class: 'form-control' }
+          .row.align-items-start
+            h3 Address
+            = f.fields_for :address do |address_form|
+              .row
+                .col
+                  .form-outline.mb-4
+                    = address_form.input :street
+                  .form-outline.mb-4
+                    = address_form.input :state, required: true
+                .col
+                  .form-outline.mb-4
+                    = address_form.input :city, required: true
+                  .form-outline.mb-4
+                    = address_form.input :country, :as => :string, required: true
         .form-actions
           = f.button :submit, "Sign up", class: 'btn btn-primary btn-block mb-4'
       = render "devise/shared/links"

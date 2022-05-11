@@ -6,5 +6,6 @@ FactoryBot.define do
     identification_number { Faker::Number.number(digits: 10) }
     email { Faker::Internet.email }
     password { Faker::Internet.password }
+    address
   end
 end

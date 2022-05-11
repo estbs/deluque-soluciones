@@ -1,11 +1,25 @@
 = simple_nested_form_for @supplier do |form|
-  = form.input :name
-  = form.input :photo
+  .form-inputs
+    h3 Main Information
+    .row.align-items-start
+      .col
+        .form-outline.mb-4
+          = form.input :name
+      .col
+        .form-outline.mb-4
+          = form.input :photo
 
-  h5 Address
+  h3 Address
   = form.fields_for :address do |address_form|
-    = address_form.input :street
-    = address_form.input :city
-    = address_form.input :state
-    = address_form.input :country, :as => :string
+    .row.align-items-start
+        .col
+          .form-outline.mb-4
+            = address_form.input :street
+          .form-outline.mb-4
+            = address_form.input :state
+        .col
+          .form-outline.mb-4
+            = address_form.input :city
+          .form-outline.mb-4
+            = address_form.input :country, :as => :string
   = form.button :submit, class: 'btn btn-primary mt-2'

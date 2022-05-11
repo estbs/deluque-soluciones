@@ -37,7 +37,8 @@ class UsersController < ApplicationController
             :phone_number,
             :identification_type,
             :identification_number,
-            :email
+            :email,
+            address_attributes: %i[id street city state country]
           )
   end
 end
