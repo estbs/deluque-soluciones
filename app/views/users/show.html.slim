@@ -1,0 +1,42 @@
+h1 Show user
+br
+.container
+  h4 Main information
+  .row
+    .col
+      strong Name:
+      = " #{@user.name}"
+  .row
+    .col
+      strong Phone number:
+      = " #{@user.phone_number}"
+  .row
+    .col
+      strong Identification type:
+      = " #{@user.identification_type}"
+  .row
+    .col
+      strong Identification number:
+      = " #{@user.identification_number}"
+  .row
+    .col
+      strong Email:
+      = " #{@user.email}"
+  br
+  h4 Address
+  .row
+    .col
+      strong Street:
+      = " #{@user.address.street}"
+  .row
+    .col
+      strong City:
+      = " #{@user.address.city}"
+  .row
+    .col
+      strong State:
+      = " #{@user.address.state}"
+  .row
+    .col
+      strong Country:
+      = " #{@user.address.country}"

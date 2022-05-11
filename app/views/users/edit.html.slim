@@ -1,17 +1,24 @@
-= simple_nested_form_for @supplier do |form|
+h1.text-center Edit user
+= simple_nested_form_for @user do |form|
   .form-inputs
     h3 Main Information
     .row.align-items-start
       .col
         .form-outline.mb-4
           = form.input :name
+        .form-outline.mb-4
+          = form.input :identification_type
+        .form-outline.mb-4
+          = form.input :email
       .col
         .form-outline.mb-4
-          = form.input :photo
+          = form.input :phone_number
+        .form-outline.mb-4
+          = form.input :identification_number
 
-  h3 Address
-  = form.fields_for :address do |address_form|
-    .row.align-items-start
+    h3 Address
+    = form.fields_for :address do |address_form|
+      .row.align-items-start
         .col
           .form-outline.mb-4
             = address_form.input :street
