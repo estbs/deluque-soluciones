@@ -1,0 +1,20 @@
+es:
+  devise:
+    session:
+      new:
+        email: 'Correo electrónico'
+        password: 'Contraseña'
+        remember_me: 'Recordarme'
+        log_in: 'Iniciar sesión'
+    shared:
+        sign_up: 'Registrarme'
+        forgot_your_password: 'Olvidaste tu contraseña?'
+  shared:
+    navbar:
+      home: 'Inicio'
+      users: 'Usuarios'
+      suppliers: 'Proveedores'
+      edit_registration: 'Editar registro'
+      log_out: 'Cerrar sesión'
+      register: 'Registrarme'
+      log_in: 'Iniciar sesión'

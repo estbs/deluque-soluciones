@@ -30,4 +30,22 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  devise:
+    session:
+      new:
+        email: 'Email'
+        password: 'Password'
+        remember_me: 'Remember me'
+        log_in: 'Log in'
+    shared:
+      sign_up: 'Sign up'
+      forgot_your_password: 'Forgot your password?'
+  shared:
+    navbar:
+      home: 'Home'
+      users: 'Users'
+      suppliers: 'Suppliers'
+      edit_registration: 'Edit registration'
+      log_out: 'Logout'
+      register: 'Register'
+      log_in: 'Login'
