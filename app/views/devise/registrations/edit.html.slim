@@ -2,56 +2,52 @@
   .card.mt-5
     .card-body
       .card-title.text-center
-        h2
-          | Edit 
-          = resource_name.to_s.humanize
+        h2 = I18n.t('devise.registration.edit.title')
       = simple_nested_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
         = f.error_notification
         .form-inputs
           .row.align-items-start
             .col
               .form-outline.mb-4
-                = f.input :name, required: true, input_html: { class: 'form-control' }
+                = f.input :name, required: true, input_html: { class: 'form-control' }, label: I18n.t('users.form.name')
               .form-outline.mb-4
-                = f.input :identification_type, collection: ['cc'], input_html: { class: 'form-control' }
+                = f.input :identification_type, collection: ['cc'], input_html: { class: 'form-control' }, label: I18n.t('users.form.identification_type')
               .form-outline.mb-4
-                = f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' }
+                = f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' }, label: I18n.t('users.form.email')
               .form-outline.mb-4
-                = f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { autocomplete: "current-password", class: 'form-control' }
+                = f.input :current_password, hint: I18n.t('users.form.current_password_advice'), required: true, input_html: { autocomplete: "current-password", class: 'form-control' }, label: I18n.t('users.form.current_password')
             .col
               .form-outline.mb-4
-                = f.input :phone_number, input_html: { class: 'form-control' }
+                = f.input :phone_number, input_html: { class: 'form-control' }, label: I18n.t('users.form.phone_number')
               .form-outline.mb-4
-                = f.input :identification_number, required: true, input_html: { class: 'form-control' }
+                = f.input :identification_number, required: true, input_html: { class: 'form-control' }, label: I18n.t('users.form.identification_number')
               .form-outline.mb-4
                 - if devise_mapping.confirmable? && resource.pending_reconfirmation?
                   p
                     | Currently waiting confirmation for:
                     = resource.unconfirmed_email
               .form-outline.mb-4
-                = f.input :password, hint: "leave it blank if you don't want to change it", required: false, input_html: { autocomplete: "new-password", class: 'form-control' }
+                = f.input :password, hint: I18n.t('users.form.password_advice'), required: false, input_html: { autocomplete: "new-password", class: 'form-control' }, label: I18n.t('users.form.password')
               .form-outline.mb-4
-                = f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password", class: 'form-control' }
+                = f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password", class: 'form-control' }, label: I18n.t('users.form.password_confirmation')
         .row.align-items-start
-          h3 Address
+          h3 = I18n.t('users.form.address')
           = f.fields_for :address do |address_form|
             .row
               .col
                 .form-outline.mb-4
-                  = address_form.input :street
+                  = address_form.input :street, label: I18n.t('users.form.street')
                 .form-outline.mb-4
-                  = address_form.input :state, required: true
+                  = address_form.input :state, required: true, label: I18n.t('users.form.state')
               .col
                 .form-outline.mb-4
-                  = address_form.input :city, required: true
+                  = address_form.input :city, required: true, label: I18n.t('users.form.city')
                 .form-outline.mb-4
-                  = address_form.input :country, :as => :string, required: true
+                  = address_form.input :country, :as => :string, required: true, label: I18n.t('users.form.country')
         .form-actions
-          = f.button :submit, "Update", class: 'btn btn-primary btn-block mb-4'
-      h3
-        | Cancel my account
+          = f.button :submit, I18n.t('devise.registration.edit.update'), class: 'btn btn-primary btn-block mb-4'
+      h3 = I18n.t('devise.registration.edit.cancel_account')
+      p = I18n.t('devise.registration.edit.unhappy')
       p
-        | Unhappy?
-      p
-        = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger btn-block mb-4'
-      = link_to "Back", :back
+        = link_to I18n.t('devise.registration.edit.cancel_account'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger btn-block mb-4'
+      = link_to I18n.t('devise.registration.edit.back'), :back

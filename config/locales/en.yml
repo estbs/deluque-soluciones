@@ -36,9 +36,18 @@ en:
         email: 'Email'
         password: 'Password'
         remember_me: 'Remember me'
-        log_in: 'Log in'
+    registration:
+      new:
+        title: 'Registration'
+      edit:
+        title: 'Edit registration user'
+        update: 'Update'
+        cancel_account: 'Cancel my account'
+        unhappy: 'Unhappy?'
+        back: 'Back'
     shared:
       sign_up: 'Sign up'
+      log_in: 'Log in'
       forgot_your_password: 'Forgot your password?'
   shared:
     navbar:
@@ -53,6 +62,7 @@ en:
       edit: 'Edit'
       show: 'Show'
       delete: 'Delete'
+      sign_up: 'Sign up'
   suppliers:
     title: 'Suppliers'
     index_table:
@@ -79,3 +89,36 @@ en:
       title: 'Show Supplier'
     delete:
       confirmation: 'Are you sure to delete this supplier?'
+  users:
+    title: 'Users'
+    index_table:
+      name: 'Name'
+      phone_number: 'Phone Number'
+      identification_type: 'Identification type'
+      identification_number: 'Identification number'
+      email: 'Email'
+      actions: 'Actions'
+    form:
+      main_information: 'Main Information'
+      name: 'Name'
+      phone_number: 'Phone Number'
+      identification_type: 'Identification type'
+      identification_number: 'Identification number'
+      email: 'Email'
+      address: 'Address'
+      street: 'Street'
+      city: 'City'
+      state: 'State'
+      country: Country
+      password: 'Password'
+      password_confirmation: 'Password confirmation'
+      minimum_characters: 'characters minimum'
+      current_password: 'Current password'
+      password_advice: 'leave it blank if you dont want to change it'
+      current_password_advice: 'we need your current password to confirm your changes'
+    edit:
+      title: 'Edit User'
+    show:
+      title: 'Show User'
+    delete:
+      confirmation: 'Are you sure to delete this user?'

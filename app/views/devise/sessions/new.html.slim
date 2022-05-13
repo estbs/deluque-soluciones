@@ -12,5 +12,5 @@
               .form-check
                 = f.input :remember_me, label: I18n.t('devise.session.new.remember_me'), input_html: { class: 'form-check-input' }, as: :boolean if devise_mapping.rememberable?
         .form-actions
-          = f.button :submit, I18n.t('devise.session.new.log_in'), class: 'btn btn-primary btn-block mb-4'
+          = f.button :submit, I18n.t('devise.shared.log_in'), class: 'btn btn-primary btn-block mb-4'
       = render "devise/shared/links"

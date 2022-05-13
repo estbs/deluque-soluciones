@@ -1,15 +1,14 @@
-h1 Users
-/ = link_to('New User', new_user_path, class: 'btn btn-primary float-right')
+h1 = I18n.t('users.title')
 
 table.table.table-striped
   thead
     tr
-      th Name
-      th Phone number
-      th Identification type
-      th Identification number
-      th Email
-      th Actions
+      th = I18n.t('users.index_table.name')
+      th = I18n.t('users.index_table.phone_number')
+      th = I18n.t('users.index_table.identification_type')
+      th = I18n.t('users.index_table.identification_number')
+      th = I18n.t('users.index_table.email')
+      th = I18n.t('users.index_table.actions')
   tbody
     - @users.each do |user|
       tr
@@ -19,6 +18,6 @@ table.table.table-striped
         td = user.identification_number
         td = user.email
         td
-          = link_to('Show', user_path(user), class: 'btn btn-primary')
-          = link_to('Edit', edit_user_path(user), class: 'btn btn-primary ms-1')
-          = link_to('Delete', user_path(user), class: 'btn btn-danger ms-1', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" })
+          = link_to(I18n.t('shared.buttons.show'), user_path(user), class: 'btn btn-primary')
+          = link_to(I18n.t('shared.buttons.edit'), edit_user_path(user), class: 'btn btn-primary ms-1')
+          = link_to(I18n.t('shared.buttons.delete'), user_path(user), class: 'btn btn-danger ms-1', data: { turbo_method: :delete, turbo_confirm: I18n.t('users.delete.confirmation') })

@@ -5,9 +5,18 @@ es:
         email: 'Correo electrónico'
         password: 'Contraseña'
         remember_me: 'Recordarme'
-        log_in: 'Iniciar sesión'
+    registration:
+      new:
+        title: 'Registrarme'
+      edit:
+        title: 'Editar mi registro'
+        update: 'Actualizar mi registro'
+        cancel_account: 'Cancelar mi cuenta'
+        unhappy: 'Desea cancelar su cuenta?'
+        back: 'Atras'
     shared:
         sign_up: 'Registrarme'
+        log_in: 'Iniciar sesión'
         forgot_your_password: 'Olvidaste tu contraseña?'
   shared:
     navbar:
@@ -22,6 +31,7 @@ es:
       edit: 'Editar'
       show: 'Ver'
       delete: 'Borrar'
+      sign_up: 'Registrarme'
   suppliers:
     title: 'Proveedores'
     index_table:
@@ -48,3 +58,36 @@ es:
       title: 'Ver proveedor'
     delete:
       confirmation: 'Desea eliminar este proveedor?'
+  users:
+    title: 'Usuarios'
+    index_table:
+      name: 'Nombre'
+      phone_number: 'Teléfono'
+      identification_type: 'Tipo identificación'
+      identification_number: 'Número identificación'
+      email: 'Correo electrónico'
+      actions: 'Acciones'
+    form:
+      main_information: 'Información principal'
+      name: 'Nombre'
+      phone_number: 'Teléfono'
+      identification_type: 'Tipo identificación'
+      identification_number: 'Número identificación'
+      email: 'Correo electrónico'
+      address: 'Dirección'
+      street: 'Dirección'
+      city: 'Ciudad'
+      state: 'Departamento'
+      country: Pais
+      password: 'Contraseña'
+      password_confirmation: 'Confirmar contraseña'
+      minimum_characters: 'caracteres mínimo'
+      current_password: 'Contraseña actual'
+      password_advice: 'Dejalo en blanco si no la desea cambiar'
+      current_password_advice: 'Necesitamos tu contraseña actual para confirmar los cambios'
+    edit:
+      title: 'Editar usuario'
+    show:
+      title: 'Ver usuario'
+    delete:
+      confirmation: 'Desea eliminar este usuario?'
