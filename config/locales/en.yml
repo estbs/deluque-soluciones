@@ -45,6 +45,13 @@ en:
         cancel_account: 'Cancel my account'
         unhappy: 'Unhappy?'
         back: 'Back'
+    password:
+      forgot_your_password: 'Forgot your password?'
+      email: 'Email'
+      send_password_instructions: 'Send me reset password instructions'
+      new_password: 'New password'
+      password_confirmation: 'Password confirmation'
+      change_password: 'Change my password'
     shared:
       sign_up: 'Sign up'
       log_in: 'Log in'

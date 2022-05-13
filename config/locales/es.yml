@@ -14,10 +14,18 @@ es:
         cancel_account: 'Cancelar mi cuenta'
         unhappy: 'Desea cancelar su cuenta?'
         back: 'Atras'
+    password:
+      forgot_your_password: 'Olvidaste tu contraseña?'
+      email: 'Correo electrónico'
+      send_password_instructions: 'Enviarme instrucciones para reestablecer contraseña'
+      change_your_password: 'Change your password'
+      new_password: 'Nueva contraseña'
+      password_confirmation: 'Confirmar contraseña'
+      change_password: 'Cambiar mi contraseña'
     shared:
-        sign_up: 'Registrarme'
-        log_in: 'Iniciar sesión'
-        forgot_your_password: 'Olvidaste tu contraseña?'
+      sign_up: 'Registrarme'
+      log_in: 'Iniciar sesión'
+      forgot_your_password: 'Olvidaste tu contraseña?'
   shared:
     navbar:
       home: 'Inicio'
