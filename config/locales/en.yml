@@ -49,3 +49,33 @@ en:
       log_out: 'Logout'
       register: 'Register'
       log_in: 'Login'
+    buttons:
+      edit: 'Edit'
+      show: 'Show'
+      delete: 'Delete'
+  suppliers:
+    title: 'Suppliers'
+    index_table:
+      name: 'Name'
+      city: 'City'
+      state: 'State'
+      country: 'Country'
+      actions: 'Actions'
+      new_supplier: 'New supplier'
+    form:
+      main_information: 'Main information'
+      name: 'Name'
+      photo: 'Photo'
+      address: 'Address'
+      street: 'Street'
+      city: 'City'
+      state: 'State'
+      country: 'Country'
+    new:
+      title: 'New Supplier'
+    edit:
+      title: 'Edit Supplier'
+    show:
+      title: 'Show Supplier'
+    delete:
+      confirmation: 'Are you sure to delete this supplier?'

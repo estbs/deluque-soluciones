@@ -18,3 +18,33 @@ es:
       log_out: 'Cerrar sesión'
       register: 'Registrarme'
       log_in: 'Iniciar sesión'
+    buttons:
+      edit: 'Editar'
+      show: 'Ver'
+      delete: 'Borrar'
+  suppliers:
+    title: 'Proveedores'
+    index_table:
+      name: 'Nombre'
+      city: 'Ciudad'
+      state: 'Departamento'
+      country: 'Pais'
+      actions: 'Acciones'
+      new_supplier: 'Nuevo proveedor'
+    form:
+      main_information: 'Información principal'
+      name: 'Nombre'
+      photo: 'Foto'
+      address: 'Dirección'
+      street: 'Dirección'
+      city: 'Ciudad'
+      state: 'Departamento'
+      country: 'Pais'
+    new:
+      title: 'Nuevo proveedor'
+    edit:
+      title: 'Editar proveedor'
+    show:
+      title: 'Ver proveedor'
+    delete:
+      confirmation: 'Desea eliminar este proveedor?'
