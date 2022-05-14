@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   resources :suppliers
   resources :users, only: %i[index show edit update destroy]
+  resources :qualities
 end

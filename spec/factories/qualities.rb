@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :quality do
-    name { "MyString" }
-    description { "MyString" }
+    name { 'Plumber' }
+    description { 'Work with tubes' }
   end
 end

@@ -30,4 +30,121 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  devise:
+    session:
+      new:
+        email: 'Email'
+        password: 'Password'
+        remember_me: 'Remember me'
+    registration:
+      new:
+        title: 'Registration'
+      edit:
+        title: 'Edit registration user'
+        update: 'Update'
+        cancel_account: 'Cancel my account'
+        unhappy: 'Unhappy?'
+        back: 'Back'
+    password:
+      forgot_your_password: 'Forgot your password?'
+      email: 'Email'
+      send_password_instructions: 'Send me reset password instructions'
+      new_password: 'New password'
+      password_confirmation: 'Password confirmation'
+      change_password: 'Change my password'
+    shared:
+      sign_up: 'Sign up'
+      log_in: 'Log in'
+      forgot_your_password: 'Forgot your password?'
+  shared:
+    navbar:
+      home: 'Home'
+      users: 'Users'
+      suppliers: 'Suppliers'
+      qualities: 'Qualities'
+      edit_registration: 'Edit registration'
+      log_out: 'Logout'
+      register: 'Register'
+      log_in: 'Login'
+    buttons:
+      edit: 'Edit'
+      show: 'Show'
+      delete: 'Delete'
+      sign_up: 'Sign up'
+  suppliers:
+    title: 'Suppliers'
+    index_table:
+      name: 'Name'
+      city: 'City'
+      state: 'State'
+      country: 'Country'
+      actions: 'Actions'
+      new_supplier: 'New supplier'
+    form:
+      main_information: 'Main information'
+      name: 'Name'
+      photo: 'Photo'
+      address: 'Address'
+      street: 'Street'
+      city: 'City'
+      state: 'State'
+      country: 'Country'
+    new:
+      title: 'New Supplier'
+    edit:
+      title: 'Edit Supplier'
+    show:
+      title: 'Show Supplier'
+    delete:
+      confirmation: 'Are you sure to delete this supplier?'
+  users:
+    title: 'Users'
+    index_table:
+      name: 'Name'
+      phone_number: 'Phone Number'
+      identification_type: 'Identification type'
+      identification_number: 'Identification number'
+      email: 'Email'
+      actions: 'Actions'
+    form:
+      main_information: 'Main Information'
+      name: 'Name'
+      phone_number: 'Phone Number'
+      identification_type: 'Identification type'
+      identification_number: 'Identification number'
+      email: 'Email'
+      address: 'Address'
+      street: 'Street'
+      city: 'City'
+      state: 'State'
+      country: Country
+      password: 'Password'
+      password_confirmation: 'Password confirmation'
+      minimum_characters: 'characters minimum'
+      current_password: 'Current password'
+      password_advice: 'leave it blank if you dont want to change it'
+      current_password_advice: 'we need your current password to confirm your changes'
+    edit:
+      title: 'Edit User'
+    show:
+      title: 'Show User'
+    delete:
+      confirmation: 'Are you sure to delete this user?'
+  qualities:
+    title: 'Qualities'
+    index_table:
+      name: 'Name'
+      description: 'Description'
+      actions: 'Actions'
+      new_quality: 'New quality'
+    form:
+      name: 'Name'
+      description: 'Description'
+    new:
+      title: 'New Quality'
+    show:
+      title: 'Show Quality'
+    edit:
+      title: 'Edit Quality'
+    delete:
+      confirmation: 'Are you sure to delete this quality?'

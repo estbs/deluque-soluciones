@@ -1,14 +1,14 @@
-h1 Suppliers
-= link_to('New Supplier', new_supplier_path, class: 'btn btn-primary float-right')
+h1 = I18n.t('suppliers.title')
+= link_to(I18n.t('suppliers.index_table.new_supplier'), new_supplier_path, class: 'btn btn-primary float-right')
 
 table.table.table-striped
   thead
     tr
-      th Name
-      th City
-      th State
-      th Country
-      th Actions
+      th = I18n.t('suppliers.index_table.name')
+      th = I18n.t('suppliers.index_table.city')
+      th = I18n.t('suppliers.index_table.state')
+      th = I18n.t('suppliers.index_table.country')
+      th = I18n.t('suppliers.index_table.actions')
   tbody
     - @suppliers.each do |supplier|
       tr
@@ -17,6 +17,6 @@ table.table.table-striped
         td = supplier.address.state
         td = supplier.address.country
         td
-          = link_to('Show', supplier_path(supplier), class: 'btn btn-primary')
-          = link_to('Edit', edit_supplier_path(supplier), class: 'btn btn-primary ms-1')
-          = link_to('Delete', supplier_path(supplier), class: 'btn btn-danger ms-1', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" })
+          = link_to(I18n.t('shared.buttons.show'), supplier_path(supplier), class: 'btn btn-primary')
+          = link_to(I18n.t('shared.buttons.edit'), edit_supplier_path(supplier), class: 'btn btn-primary ms-1')
+          = link_to(I18n.t('shared.buttons.delete'), supplier_path(supplier), class: 'btn btn-danger ms-1', data: { turbo_method: :delete, turbo_confirm: I18n.t('suppliers.delete.confirmation') })

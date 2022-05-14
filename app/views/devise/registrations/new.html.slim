@@ -2,42 +2,42 @@
   .card.mt-5
     .card-body
       .card-title.text-center
-        h2 Registration
+        h2 = I18n.t('devise.registration.new.title')
       = simple_nested_form_for([resource, resource.with_address], url: registration_path(resource_name)) do |f|
         = f.error_notification
         .form-inputs
-          h3 Main Information
+          h3 = I18n.t('users.form.main_information')
           .row.align-items-start
             .col
               .form-outline.mb-4
-                = f.input :name, required: true, input_html: { class: 'form-control' }
+                = f.input :name, required: true, input_html: { class: 'form-control' }, label: I18n.t('users.form.name')
               .form-outline.mb-4
-                = f.input :identification_type, collection: ['cc'], input_html: { class: 'form-control' }
+                = f.input :identification_type, collection: ['cc'], input_html: { class: 'form-control' }, label: I18n.t('users.form.identification_type')
               .form-outline.mb-4
-                = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email", class: 'form-control' }
+                = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email", class: 'form-control' }, label: I18n.t('users.form.identification_number')
               .form-outline.mb-4
-                = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: 'form-control' }
+                = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: 'form-control' }, label: I18n.t('users.form.password_confirmation')
             .col
               .form-outline.mb-4
-                = f.input :phone_number, input_html: { class: 'form-control' }
+                = f.input :phone_number, input_html: { class: 'form-control' }, label: I18n.t('users.form.phone_number')
               .form-outline.mb-4
-                = f.input :identification_number, required: true, input_html: { class: 'form-control' }
+                = f.input :identification_number, required: true, input_html: { class: 'form-control' }, label: I18n.t('users.form.identification_number')
               .form-outline.mb-4
-                = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password", class: 'form-control' }
+                = f.input :password, required: true, hint: ("#{@minimum_password_length} " + I18n.t('users.form.minimum_characters') if @minimum_password_length), input_html: { autocomplete: "new-password", class: 'form-control' }, label: I18n.t('users.form.password')
           .row.align-items-start
-            h3 Address
+            h3 = I18n.t('users.form.address')
             = f.fields_for :address do |address_form|
               .row
                 .col
                   .form-outline.mb-4
-                    = address_form.input :street
+                    = address_form.input :street, label: I18n.t('users.form.street')
                   .form-outline.mb-4
-                    = address_form.input :state, required: true
+                    = address_form.input :state, required: true, label: I18n.t('users.form.state')
                 .col
                   .form-outline.mb-4
-                    = address_form.input :city, required: true
+                    = address_form.input :city, required: true, label: I18n.t('users.form.city')
                   .form-outline.mb-4
-                    = address_form.input :country, :as => :string, required: true
+                    = address_form.input :country, :as => :string, required: true, label: I18n.t('users.form.country')
         .form-actions
-          = f.button :submit, "Sign up", class: 'btn btn-primary btn-block mb-4'
+          = f.button :submit, I18n.t('shared.buttons.sign_up'), class: 'btn btn-primary btn-block mb-4'
       = render "devise/shared/links"
