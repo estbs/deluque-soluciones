@@ -142,3 +142,5 @@ en:
       description: 'Description'
     new:
       title: 'New Quality'
+    show:
+      title: 'Show Quality'

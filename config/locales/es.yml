@@ -112,3 +112,5 @@ es:
       description: 'Descripción'
     new:
       title: 'Nueva cualidad'
+    show:
+      title: 'Ver cualidad'
