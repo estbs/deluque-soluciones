@@ -136,3 +136,9 @@ en:
       name: 'Name'
       description: 'Description'
       actions: 'Actions'
+      new_quality: 'New quality'
+    form:
+      name: 'Name'
+      description: 'Description'
+    new:
+      title: 'New Quality'

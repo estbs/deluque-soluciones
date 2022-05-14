@@ -36,4 +36,31 @@ RSpec.describe QualitiesController, type: :controller do
       end
     end
   end
+
+  describe 'GET new' do
+    context 'When the user is signed in' do
+      let(:user) { create(:user) }
+
+      before do
+        sign_in(user)
+        get :new
+      end
+
+      it 'Assigns @quality' do
+        expect(assigns(:quality)).to be_a_new(Quality)
+      end
+
+      it 'Renders the new template' do
+        expect(response).to render_template(:new)
+      end
+    end
+
+    context 'When the user is not signed in' do
+      before { get :new }
+
+      it 'Does not render the new template' do
+        expect(response).not_to render_template(:new)
+      end
+    end
+  end
 end

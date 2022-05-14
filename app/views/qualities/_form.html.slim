@@ -1,0 +1,10 @@
+= simple_form_for @quality do |form|
+  .form_inputs
+    .row.align-items-start
+      .col
+        .form-outline.mb-4
+          = form.input :name, label: I18n.t('qualities.form.name')
+      .col
+        .form-outline.mb-4
+          = form.input :description, label: I18n.t('qualities.form.description')
+  = form.button :submit, class: 'btn btn-primary mt-2'

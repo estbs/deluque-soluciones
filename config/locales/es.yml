@@ -106,3 +106,9 @@ es:
       name: 'Nombre'
       description: 'Descripción'
       actions: 'Acciones'
+      new_quality: 'Nueva Cualidad'
+    form:
+      name: 'Nombre'
+      description: 'Descripción'
+    new:
+      title: 'Nueva cualidad'

@@ -4,4 +4,8 @@ class QualitiesController < ApplicationController
   def index
     @qualities = Quality.all
   end
+
+  def new
+    @quality = Quality.new
+  end
 end
