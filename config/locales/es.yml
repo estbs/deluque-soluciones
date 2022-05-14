@@ -31,6 +31,7 @@ es:
       home: 'Inicio'
       users: 'Usuarios'
       suppliers: 'Proveedores'
+      qualities: 'Cualidades'
       edit_registration: 'Editar registro'
       log_out: 'Cerrar sesión'
       register: 'Registrarme'
@@ -99,3 +100,9 @@ es:
       title: 'Ver usuario'
     delete:
       confirmation: 'Desea eliminar este usuario?'
+  qualities:
+    title: 'Cualidades'
+    index_table:
+      name: 'Nombre'
+      description: 'Descripción'
+      actions: 'Acciones'

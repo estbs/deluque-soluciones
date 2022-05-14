@@ -8,6 +8,8 @@
           = link_to(I18n.t('shared.navbar.users'), users_path, class: 'nav-link')
         li.nav-item
           = link_to(I18n.t('shared.navbar.suppliers'), suppliers_path, class: 'nav-link')
+        li.nav-item
+          = link_to(I18n.t('shared.navbar.qualities'), qualities_path, class: 'nav-link')
         - if user_signed_in?
           li.nav-item
             = link_to(I18n.t('shared.navbar.edit_registration'), edit_user_registration_path, class: 'nav-link')

@@ -61,6 +61,7 @@ en:
       home: 'Home'
       users: 'Users'
       suppliers: 'Suppliers'
+      qualities: 'Qualities'
       edit_registration: 'Edit registration'
       log_out: 'Logout'
       register: 'Register'
@@ -129,3 +130,9 @@ en:
       title: 'Show User'
     delete:
       confirmation: 'Are you sure to delete this user?'
+  qualities:
+    title: 'Qualities'
+    index_table:
+      name: 'Name'
+      description: 'Description'
+      actions: 'Actions'

@@ -1,0 +1,17 @@
+h1 = I18n.t('qualities.title')
+
+table.table.table-striped
+  thead
+    tr
+      th = I18n.t('qualities.index_table.name')
+      th = I18n.t('qualities.index_table.description')
+      th = I18n.t('qualities.index_table.actions')
+  tbody
+    - @qualities.each do |quality|
+      tr
+        td = quality.name
+        td = quality.description
+        td
+          = link_to(I18n.t('shared.buttons.show'), user_path(user), class: 'btn btn-primary')
+          = link_to(I18n.t('shared.buttons.edit'), edit_user_path(user), class: 'btn btn-primary ms-1')
+          = link_to(I18n.t('shared.buttons.delete'), user_path(user), class: 'btn btn-danger ms-1', data: { turbo_method: :delete, turbo_confirm: I18n.t('users.delete.confirmation') })
