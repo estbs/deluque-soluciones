@@ -146,3 +146,5 @@ en:
       title: 'Show Quality'
     edit:
       title: 'Edit Quality'
+    delete:
+      confirmation: 'Are you sure to delete this quality?'

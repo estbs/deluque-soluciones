@@ -235,4 +235,28 @@ RSpec.describe QualitiesController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE destroy' do
+    subject { delete :destroy, params: params }
+    let!(:quality) { create(:quality) }
+    let(:params) do
+      { id: quality.id }
+    end
+
+    context 'When user is signed in' do
+      let(:user) { create(:user) }
+
+      before { sign_in(user) }
+
+      it 'Deletes the quality' do
+        expect { subject }.to change(Quality, :count).from(1).to(0)
+      end
+    end
+
+    context 'When user is not signed in' do
+      it 'Does not delete the quality' do
+        expect { subject }.not_to change(Quality, :count)
+      end
+    end
+  end
 end

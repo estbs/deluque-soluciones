@@ -116,3 +116,5 @@ es:
       title: 'Ver cualidad'
     edit:
       title: 'Editar cualidad'
+    delete:
+      confirmation: 'Desea eliminar esta cualidad?'

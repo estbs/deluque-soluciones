@@ -37,6 +37,12 @@ class QualitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @quality = Quality.find(params[:id])
+    @quality.destroy
+    redirect_to qualities_path
+  end
+
   private
 
   def quality_params
