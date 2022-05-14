@@ -1,0 +1,11 @@
+h1 = I18n.t('qualities.show.title')
+br
+.container
+  .row
+    .col
+      strong = I18n.t('qualities.form.name')
+      = ": #{@quality.name}"
+  .row
+    .col
+      strong = I18n.t('qualities.form.description')
+      = ": #{@quality.description}"

@@ -1,26 +1,26 @@
-h1 Show supplier
+h1 = I18n.t('suppliers.show.title')
 br
 .container
-  h4 Main information
+  h4 = I18n.t('suppliers.form.main_information')
   .row
     .col
-      strong Name:
-      = " #{@supplier.name}"
+      strong = I18n.t('suppliers.form.name')
+      = ": #{@supplier.name}"
   br
-  h4 Address
+  h4 = I18n.t('suppliers.form.address')
   .row
     .col
-      strong Street:
-      = " #{@supplier.address.street}"
+      strong = I18n.t('suppliers.form.street')
+      = ": #{@supplier.address.street}"
   .row
     .col
-      strong City:
-      = " #{@supplier.address.city}"
+      strong = I18n.t('suppliers.form.city')
+      = ": #{@supplier.address.city}"
   .row
     .col
-      strong State:
-      = " #{@supplier.address.state}"
+      strong = I18n.t('suppliers.form.state')
+      = ": #{@supplier.address.state}"
   .row
     .col
-      strong Country:
-      = " #{@supplier.address.country}"
+      strong = I18n.t('suppliers.form.country')
+      = ": #{@supplier.address.country}"

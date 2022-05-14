@@ -1,42 +1,42 @@
-h1 Show user
+h1 = I18n.t('users.show.title')
 br
 .container
   h4 Main information
   .row
     .col
-      strong Name:
-      = " #{@user.name}"
+      strong = I18n.t('users.form.name')
+      = ": #{@user.name}"
   .row
     .col
-      strong Phone number:
-      = " #{@user.phone_number}"
+      strong = I18n.t('users.form.phone_number')
+      = ": #{@user.phone_number}"
   .row
     .col
-      strong Identification type:
-      = " #{@user.identification_type}"
+      strong = I18n.t('users.form.identification_type')
+      = ": #{@user.identification_type}"
   .row
     .col
-      strong Identification number:
-      = " #{@user.identification_number}"
+      strong = I18n.t('users.form.identification_number')
+      = ": #{@user.identification_number}"
   .row
     .col
-      strong Email:
-      = " #{@user.email}"
+      strong = I18n.t('users.form.email')
+      = ": #{@user.email}"
   br
-  h4 Address
+  h4 = I18n.t('users.form.address')
   .row
     .col
-      strong Street:
-      = " #{@user.address.street}"
+      strong = I18n.t('users.form.street')
+      = ": #{@user.address.street}"
   .row
     .col
-      strong City:
-      = " #{@user.address.city}"
+      strong = I18n.t('users.form.city')
+      = ": #{@user.address.city}"
   .row
     .col
-      strong State:
-      = " #{@user.address.state}"
+      strong = I18n.t('users.form.state')
+      = ": #{@user.address.state}"
   .row
     .col
-      strong Country:
-      = " #{@user.address.country}"
+      strong = I18n.t('users.form.country')
+      = ": #{@user.address.country}"

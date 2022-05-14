@@ -1,0 +1,120 @@
+es:
+  devise:
+    session:
+      new:
+        email: 'Correo electrónico'
+        password: 'Contraseña'
+        remember_me: 'Recordarme'
+    registration:
+      new:
+        title: 'Registrarme'
+      edit:
+        title: 'Editar mi registro'
+        update: 'Actualizar mi registro'
+        cancel_account: 'Cancelar mi cuenta'
+        unhappy: 'Desea cancelar su cuenta?'
+        back: 'Atras'
+    password:
+      forgot_your_password: 'Olvidaste tu contraseña?'
+      email: 'Correo electrónico'
+      send_password_instructions: 'Enviarme instrucciones para reestablecer contraseña'
+      change_your_password: 'Change your password'
+      new_password: 'Nueva contraseña'
+      password_confirmation: 'Confirmar contraseña'
+      change_password: 'Cambiar mi contraseña'
+    shared:
+      sign_up: 'Registrarme'
+      log_in: 'Iniciar sesión'
+      forgot_your_password: 'Olvidaste tu contraseña?'
+  shared:
+    navbar:
+      home: 'Inicio'
+      users: 'Usuarios'
+      suppliers: 'Proveedores'
+      qualities: 'Cualidades'
+      edit_registration: 'Editar registro'
+      log_out: 'Cerrar sesión'
+      register: 'Registrarme'
+      log_in: 'Iniciar sesión'
+    buttons:
+      edit: 'Editar'
+      show: 'Ver'
+      delete: 'Borrar'
+      sign_up: 'Registrarme'
+  suppliers:
+    title: 'Proveedores'
+    index_table:
+      name: 'Nombre'
+      city: 'Ciudad'
+      state: 'Departamento'
+      country: 'Pais'
+      actions: 'Acciones'
+      new_supplier: 'Nuevo proveedor'
+    form:
+      main_information: 'Información principal'
+      name: 'Nombre'
+      photo: 'Foto'
+      address: 'Dirección'
+      street: 'Dirección'
+      city: 'Ciudad'
+      state: 'Departamento'
+      country: 'Pais'
+    new:
+      title: 'Nuevo proveedor'
+    edit:
+      title: 'Editar proveedor'
+    show:
+      title: 'Ver proveedor'
+    delete:
+      confirmation: 'Desea eliminar este proveedor?'
+  users:
+    title: 'Usuarios'
+    index_table:
+      name: 'Nombre'
+      phone_number: 'Teléfono'
+      identification_type: 'Tipo identificación'
+      identification_number: 'Número identificación'
+      email: 'Correo electrónico'
+      actions: 'Acciones'
+    form:
+      main_information: 'Información principal'
+      name: 'Nombre'
+      phone_number: 'Teléfono'
+      identification_type: 'Tipo identificación'
+      identification_number: 'Número identificación'
+      email: 'Correo electrónico'
+      address: 'Dirección'
+      street: 'Dirección'
+      city: 'Ciudad'
+      state: 'Departamento'
+      country: Pais
+      password: 'Contraseña'
+      password_confirmation: 'Confirmar contraseña'
+      minimum_characters: 'caracteres mínimo'
+      current_password: 'Contraseña actual'
+      password_advice: 'Dejalo en blanco si no la desea cambiar'
+      current_password_advice: 'Necesitamos tu contraseña actual para confirmar los cambios'
+    edit:
+      title: 'Editar usuario'
+    show:
+      title: 'Ver usuario'
+    delete:
+      confirmation: 'Desea eliminar este usuario?'
+  qualities:
+    title: 'Cualidades'
+    index_table:
+      name: 'Nombre'
+      description: 'Descripción'
+      actions: 'Acciones'
+      new_quality: 'Nueva Cualidad'
+    form:
+      name: 'Nombre'
+      description: 'Descripción'
+    new:
+      title: 'Nueva cualidad'
+    show:
+      title: 'Ver cualidad'
+    edit:
+      title: 'Editar cualidad'
+    delete:
+      confirmation: 'Desea eliminar esta cualidad?'
