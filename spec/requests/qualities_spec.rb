@@ -146,4 +146,37 @@ RSpec.describe QualitiesController, type: :controller do
       end
     end
   end
+
+  describe 'GET edit' do
+    let(:params) do
+      { id: quality.id }
+    end
+
+    let(:quality) { create(:quality) }
+
+    context 'When the user is signed in' do
+      let(:user) { create(:user) }
+
+      before do
+        sign_in(user)
+        get :edit, params: params
+      end
+
+      it 'Assigns @quality' do
+        expect(assigns(:quality)).to eq(quality)
+      end
+
+      it 'Renders the show template' do
+        expect(response).to render_template(:edit)
+      end
+    end
+
+    context 'When the user is not signed in' do
+      before { get :edit, params: params }
+
+      it 'Does not render the show template' do
+        expect(response).not_to render_template(:edit)
+      end
+    end
+  end
 end

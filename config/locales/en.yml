@@ -144,3 +144,5 @@ en:
       title: 'New Quality'
     show:
       title: 'Show Quality'
+    edit:
+      title: 'Edit Quality'

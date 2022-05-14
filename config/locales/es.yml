@@ -114,3 +114,5 @@ es:
       title: 'Nueva cualidad'
     show:
       title: 'Ver cualidad'
+    edit:
+      title: 'Editar cualidad'

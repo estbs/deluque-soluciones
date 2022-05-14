@@ -23,6 +23,10 @@ class QualitiesController < ApplicationController
     @quality = Quality.find(params[:id])
   end
 
+  def edit
+    @quality = Quality.find(params[:id])
+  end
+
   private
 
   def quality_params
