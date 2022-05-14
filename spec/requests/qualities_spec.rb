@@ -179,4 +179,60 @@ RSpec.describe QualitiesController, type: :controller do
       end
     end
   end
+
+  describe 'PUT update' do
+    subject { put :update, params: params }
+
+    let(:quality) { create(:quality, name: 'Carpenter', description: 'Works with wood') }
+
+    context 'When the user is signed in' do
+      let(:user) { create(:user) }
+
+      before { sign_in(user) }
+
+      context 'Valid params' do
+        let(:params) do
+          {
+            id: quality.id,
+            quality: {
+              name: 'Plumber',
+              description: 'Works with tubes'
+            }
+          }
+        end
+
+        it 'Updates quality' do
+          expect { subject }.to change { quality.reload.name }
+            .from('Carpenter').to('Plumber')
+            .and change { quality.reload.description }
+            .from('Works with wood').to('Works with tubes')
+        end
+      end
+
+      context 'Invalid params' do
+        let(:params) do
+          { id: quality.id, quality: { name: '' } }
+        end
+
+        it 'does not update quality' do
+          expect { subject }.not_to change { quality.reload.name }
+        end
+      end
+    end
+
+    context 'When the user is not signed in' do
+      let(:params) do
+        {
+          id: quality.id,
+          quality: {
+            name: 'Plumber'
+          }
+        }
+      end
+
+      it 'Does not update quality' do
+        expect { subject }.not_to change { quality.reload.name }
+      end
+    end
+  end
 end

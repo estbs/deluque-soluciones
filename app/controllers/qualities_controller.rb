@@ -27,6 +27,16 @@ class QualitiesController < ApplicationController
     @quality = Quality.find(params[:id])
   end
 
+  def update
+    @quality = Quality.find(params[:id])
+
+    if @quality.update(quality_params)
+      redirect_to quality_path(@quality)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def quality_params
