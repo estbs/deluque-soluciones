@@ -34,6 +34,7 @@ class UsersController < ApplicationController
     params.require(:user)
           .permit(
             :name,
+            :lastname,
             :phone_number,
             :identification_type,
             :identification_number,

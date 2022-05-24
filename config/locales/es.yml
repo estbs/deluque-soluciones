@@ -1,4 +1,41 @@
 es:
+  errors:
+    format: "%{message}"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: 'Nombre obligatorio'
+            lastname:
+              blank: 'Apellido obligatorio'
+            identification_type:
+              blank: 'Tipo de identificación obligatoria'
+            identification_number:
+              blank: 'Número de identificación obligatorio'
+            email:
+              blank: 'Correo electrónico obligatorio'
+            password:
+              blank: 'Contraseña obligatoria'
+            current_password:
+              blank: 'Contraseña actual obligatoria'
+        supplier:
+          attributes:
+            name:
+              blank: 'Nombre obligatorio'
+        quality:
+          attributes:
+            name:
+              blank: 'Nombre obligatorio'
+        address:
+          attributes:
+            city:
+              blank: 'Ciudad obligatoria'
+            state:
+              blank: 'Departamento obligatorio'
+            country:
+              blank: 'País obligatorio'
   devise:
     session:
       new:
@@ -79,6 +116,7 @@ es:
     form:
       main_information: 'Información principal'
       name: 'Nombre'
+      lastname: 'Apellido'
       phone_number: 'Teléfono'
       identification_type: 'Tipo identificación'
       identification_number: 'Número identificación'

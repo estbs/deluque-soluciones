@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) do |u|
       u.permit(
         :name,
+        :lastname,
         :phone_number,
         :identification_type,
         :identification_number,
@@ -22,6 +23,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) do |u|
       u.permit(
         :name,
+        :lastname,
         :phone_number,
         :identification_type,
         :identification_number,
