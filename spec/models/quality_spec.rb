@@ -7,7 +7,7 @@ RSpec.describe Quality, type: :model do
   end
 
   describe 'associations' do
-    it { is_expected.to have_many(:suppliers) }
+    it { should have_and_belong_to_many(:suppliers) }
   end
 
   describe 'validations' do

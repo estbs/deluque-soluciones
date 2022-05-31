@@ -50,6 +50,7 @@ class SuppliersController < ApplicationController
           .permit(
             :name,
             :photo,
+            quality_ids: [],
             address_attributes: %i[id street city state country]
           )
   end

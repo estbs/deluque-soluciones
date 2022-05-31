@@ -126,6 +126,7 @@ en:
       city: 'City'
       state: 'State'
       country: 'Country'
+      quialities: 'Qualities'
     new:
       title: 'New Supplier'
     edit:

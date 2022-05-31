@@ -8,6 +8,12 @@
       .col
         .form-outline.mb-4
           = form.input :photo, label: I18n.t('suppliers.form.photo')
+    .row.align-items-start
+      .col
+        .form-outline.mb-4
+          = form.association :qualities, as: :check_boxes,
+            wrapper: :horizontal_collection_inline,
+            label: I18n.t('suppliers.form.quialities')
 
   h3 = I18n.t('suppliers.form.address')
   = form.fields_for :address do |address_form|
