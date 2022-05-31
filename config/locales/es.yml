@@ -96,6 +96,7 @@ es:
       city: 'Ciudad'
       state: 'Departamento'
       country: 'Pais'
+      quialities: 'Cualidades'
     new:
       title: 'Nuevo proveedor'
     edit:
