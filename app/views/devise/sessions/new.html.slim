@@ -1,7 +1,7 @@
 .d-flex.justify-content-center
   .card.mt-5
     .card-body
-      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false}) do |f|
         .form-inputs
           .form-outline.mb-4
             = f.input :email, label: I18n.t('devise.session.new.email'), required: false, autofocus: true, input_html: { autocomplete: "email", class: 'form-control' }

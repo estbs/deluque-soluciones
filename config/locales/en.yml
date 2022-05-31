@@ -30,6 +30,43 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  errors:
+    format: "%{message}"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: 'Required name'
+            lastname:
+              blank: 'Required lastname'
+            identification_type:
+              blank: 'Required identification type'
+            identification_number:
+              blank: 'Required identification number'
+            email:
+              blank: 'Required email'
+            password:
+              blank: 'Required password'
+            current_password:
+              blank: 'Required current password'
+        supplier:
+          attributes:
+            name:
+              blank: 'Required name'
+        quality:
+          attributes:
+            name:
+              blank: 'Required name'
+        address:
+          attributes:
+            city:
+              blank: 'Required city'
+            state:
+              blank: 'Required state'
+            country:
+              blank: 'Required country'
   devise:
     session:
       new:
@@ -109,6 +146,7 @@ en:
     form:
       main_information: 'Main Information'
       name: 'Name'
+      lastname: 'Lastname'
       phone_number: 'Phone Number'
       identification_type: 'Identification type'
       identification_number: 'Identification number'

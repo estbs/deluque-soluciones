@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
-  validates :name, :identification_type, :identification_number, :email, presence: true
+  validates :name, :lastname, :identification_type, :identification_number, :email, presence: true
 
   belongs_to :address
   accepts_nested_attributes_for :address

@@ -8,6 +8,10 @@ br
       = ": #{@user.name}"
   .row
     .col
+      strong = I18n.t('users.form.lastname')
+      = ": #{@user.lastname}"
+  .row
+    .col
       strong = I18n.t('users.form.phone_number')
       = ": #{@user.phone_number}"
   .row

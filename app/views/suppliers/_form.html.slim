@@ -1,4 +1,4 @@
-= simple_nested_form_for @supplier do |form|
+= simple_nested_form_for @supplier, data: { turbo: false } do |form|
   .form-inputs
     h3 = I18n.t('suppliers.form.main_information')
     .row.align-items-start
