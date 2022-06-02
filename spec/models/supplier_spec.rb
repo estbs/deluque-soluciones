@@ -9,6 +9,7 @@ RSpec.describe Supplier, type: :model do
   describe 'associations' do
     it { is_expected.to belong_to(:address) }
     it { is_expected.to have_and_belong_to_many(:qualities) }
+    it { is_expected.to have_many(:services) }
   end
 
   describe 'validations' do

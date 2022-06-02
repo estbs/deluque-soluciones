@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   belongs_to :address
   accepts_nested_attributes_for :address
+  has_many :services
 
   def with_address
     build_address if address.nil?
