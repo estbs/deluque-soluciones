@@ -99,6 +99,7 @@ en:
       users: 'Users'
       suppliers: 'Suppliers'
       qualities: 'Qualities'
+      services: 'Services'
       edit_registration: 'Edit registration'
       log_out: 'Logout'
       register: 'Register'
@@ -108,6 +109,12 @@ en:
       show: 'Show'
       delete: 'Delete'
       sign_up: 'Sign up'
+  services:
+    title: 'Services'
+    index_table:
+      datetime_of_service: 'Date of service'
+      status: 'Status'
+      actions: 'Actions'
   suppliers:
     title: 'Suppliers'
     index_table:

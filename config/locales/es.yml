@@ -69,6 +69,7 @@ es:
       users: 'Usuarios'
       suppliers: 'Proveedores'
       qualities: 'Cualidades'
+      services: 'Servicios'
       edit_registration: 'Editar registro'
       log_out: 'Cerrar sesión'
       register: 'Registrarme'
@@ -78,6 +79,12 @@ es:
       show: 'Ver'
       delete: 'Borrar'
       sign_up: 'Registrarme'
+  services:
+    title: 'Servicios'
+    index_table:
+      datetime_of_service: 'Fecha del servicio'
+      status: 'Estado'
+      actions: 'Acciones'
   suppliers:
     title: 'Proveedores'
     index_table:

@@ -1,0 +1,17 @@
+h1 = I18n.t('services.title')
+/= link_to(I18n.t('services.index_table.new_service'), new_quality_path, class: 'btn btn-primary float-right')
+table.table.table-striped
+  thead
+    tr
+      th = I18n.t('services.index_table.datetime_of_service')
+      th = I18n.t('services.index_table.status')
+      th = I18n.t('services.index_table.actions')
+  tbody
+    - @services.each do |service|
+      tr
+        td = service.datetime_of_service
+        td = service.status
+        td
+          /= link_to(I18n.t('shared.buttons.show'), quality_path(quality), class: 'btn btn-primary')
+          /= link_to(I18n.t('shared.buttons.edit'), edit_quality_path(quality), class: 'btn btn-primary ms-1')
+          /= link_to(I18n.t('shared.buttons.delete'), quality_path(quality), class: 'btn btn-danger ms-1', data: { turbo_method: :delete, turbo_confirm: I18n.t('qualities.delete.confirmation') })
