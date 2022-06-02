@@ -114,6 +114,10 @@ en:
     index_table:
       datetime_of_service: 'Date of service'
       status: 'Status'
+      service_number: 'Service number'
+      user: 'User'
+      supplier: 'Supplier'
+      quality: 'Type of service'
       actions: 'Actions'
   suppliers:
     title: 'Suppliers'

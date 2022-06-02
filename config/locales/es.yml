@@ -84,6 +84,10 @@ es:
     index_table:
       datetime_of_service: 'Fecha del servicio'
       status: 'Estado'
+      service_number: 'Número de servicio'
+      user: 'Usuario'
+      supplier: 'Proveedor'
+      quality: 'Tipo de servicio'
       actions: 'Acciones'
   suppliers:
     title: 'Proveedores'
