@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Qualities
+qualities = Quality.create(
+  [
+    { name: 'Carpintero', description: 'Trabaja con madera' },
+    { name: 'Pintor', description: 'Trabaja con pintura' },
+    { name: 'Plomero', description: 'Trabaja con tuberias' },
+    { name: 'Aseo hogar', description: 'Limpieza de hogar' }
+  ]
+)
+
+# Suppliers
+
+# Services

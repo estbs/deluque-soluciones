@@ -1,13 +1,12 @@
 class SuppliersController < ApplicationController
   before_action :authenticate_user!
+  before_action :assign_supplier, only: %i[show edit update destroy]
 
   def index
     @suppliers = Supplier.all
   end
 
-  def show
-    @supplier = Supplier.find(params[:id])
-  end
+  def show; end
 
   def new
     @supplier = Supplier.new
@@ -20,25 +19,21 @@ class SuppliersController < ApplicationController
     if @supplier.save
       redirect_to :suppliers
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-    @supplier = Supplier.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @supplier = Supplier.find(params[:id])
     if @supplier.update(supplier_params)
       redirect_to supplier_path(@supplier)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @supplier = Supplier.find(params[:id])
     @supplier.destroy
     redirect_to suppliers_path
   end
@@ -53,5 +48,9 @@ class SuppliersController < ApplicationController
             quality_ids: [],
             address_attributes: %i[id street city state country]
           )
+  end
+
+  def assign_supplier
+    @supplier = Supplier.find(params[:id])
   end
 end

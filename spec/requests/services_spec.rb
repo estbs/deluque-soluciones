@@ -37,4 +37,31 @@ RSpec.describe ServicesController, type: :controller do
       end
     end
   end
+
+  describe 'GET new' do
+    context 'When user is signed in' do
+      let(:user) { create(:user) }
+
+      before do
+        sign_in(user)
+        get :new
+      end
+
+      it 'Assigns @service' do
+        expect(assigns(:service)).to be_a_new(Service)
+      end
+
+      it 'Renders the new template' do
+        expect(response).to render_template(:new)
+      end
+    end
+
+    context 'When user is not signed in' do
+      before { get :new }
+
+      it 'Does not render the new template' do
+        expect(response).not_to render_template(:new)
+      end
+    end
+  end
 end

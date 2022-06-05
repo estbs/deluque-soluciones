@@ -1,29 +1,24 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :assign_user, only: %i[show edit update destroy]
 
   def index
     @users = User.all
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path
   end
@@ -41,5 +36,9 @@ class UsersController < ApplicationController
             :email,
             address_attributes: %i[id street city state country]
           )
+  end
+
+  def assign_user
+    @user = User.find(params[:id])
   end
 end

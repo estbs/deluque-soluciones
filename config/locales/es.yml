@@ -89,6 +89,15 @@ es:
       supplier: 'Proveedor'
       quality: 'Tipo de servicio'
       actions: 'Acciones'
+      new_service: 'Nuevo servicio'
+    form:
+      datetime_of_service: 'Fecha del servicio'
+      status: 'Estado'
+      service_number: 'Numero de servicio'
+      supplier: 'Proveedor'
+      quality: 'Tipo de servicio'
+    new:
+      title: 'Nuevo servicio'
   suppliers:
     title: 'Proveedores'
     index_table:
