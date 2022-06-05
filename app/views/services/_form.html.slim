@@ -1,0 +1,17 @@
+= simple_nested_form_for @service do |form|
+  .form-inputs
+    .row.align-items-start
+      .col
+        .form-outline.mb-4
+          = form.association :quality,
+            label: I18n.t('services.form.quality')
+      .col
+        .form-outline.mb-4
+          = form.association :supplier,
+            label: I18n.t('services.form.supplier')
+    .row.align-items-start
+      .col
+        .form-outline.mb-4
+          = form.datetime_local_field :datetime_of_service,
+            label: I18n.t('services.form.datetime_of_service')
+  = form.button :submit, class: 'btn btn-primary mt-2'

@@ -119,6 +119,15 @@ en:
       supplier: 'Supplier'
       quality: 'Type of service'
       actions: 'Actions'
+      new_service: 'New service'
+    form:
+      datetime_of_service: 'Date of service'
+      status: 'Status'
+      service_number: 'Service number'
+      supplier: 'Supplier'
+      quality: 'Service type'
+    new:
+      title: 'New service'
   suppliers:
     title: 'Suppliers'
     index_table:

@@ -4,4 +4,10 @@ class ServicesController < ApplicationController
   def index
     @services = Service.all
   end
+
+  def new
+    @service = Service.new
+    @qualities = Quality.all
+    @suppliers = Supplier.all
+  end
 end
