@@ -13,11 +13,11 @@ table.table.table-striped
   tbody
     - @services.each do |service|
       tr
-        td = service.service_number
+        td = format_service_number(service.service_number)
         td = service.user.name
         td = service.supplier.name
         td = service.quality.name
-        td = service.datetime_of_service
+        td = service.datetime_of_service.strftime("%Y-%m-%d %I:%M %p") 
         td = service.status
         td
           /= link_to(I18n.t('shared.buttons.show'), quality_path(quality), class: 'btn btn-primary')

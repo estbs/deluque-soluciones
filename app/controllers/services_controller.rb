@@ -33,6 +33,6 @@ class ServicesController < ApplicationController
   end
 
   def generate_service_number
-    Service.all.empty? ? 1 : Service.all.last.service_number + 1
+    Service.all.empty? ? 1 : Service.all.last.service_number.to_i + 1
   end
 end
