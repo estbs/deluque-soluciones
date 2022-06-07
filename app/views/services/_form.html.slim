@@ -12,6 +12,10 @@
     .row.align-items-start
       .col
         .form-outline.mb-4
-          = form.datetime_local_field :datetime_of_service,
-            label: I18n.t('services.form.datetime_of_service')
+          = form.label I18n.t('services.form.datetime_of_service')
+          = form.datetime_local_field :datetime_of_service, class: 'form-control'
+      .col
+        .form-outline.mb-4
+          = form.label I18n.t('services.form.comment')
+          = form.text_area :comment, class: 'form-control'
   = form.button :submit, class: 'btn btn-primary mt-2'

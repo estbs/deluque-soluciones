@@ -64,4 +64,67 @@ RSpec.describe ServicesController, type: :controller do
       end
     end
   end
+
+  describe 'POST create' do
+    subject { post :create, params: params }
+
+    context 'When user is signed in' do
+      let(:user) { create(:user) }
+
+      before { sign_in(user) }
+
+      context 'Valid params' do
+        let(:quality) { create(:quality) }
+        let(:supplier) { create(:supplier) }
+        let(:params) do
+          {
+            service: {
+              quality_id: quality.id,
+              supplier_id: supplier.id,
+              user_id: user.id,
+              datetime_of_service: DateTime.now,
+              service_number: 1
+            }
+          }
+        end
+
+        it 'Creates a new service' do
+          expect { subject }.to change(Service, :count).from(0).to(1)
+        end
+      end
+
+      context 'Invalid params' do
+        let(:params) do
+          {
+            service: { quality_attributes: '', supplier_attributes: '', datetime_of_service: DateTime.now }
+          }
+        end
+
+        it 'Does not create a new service' do
+          expect { subject }.not_to change(Service, :count)
+        end
+      end
+    end
+
+    context 'When user is not signed in' do
+      context 'Valid params' do
+        let(:quality) { create(:quality) }
+        let(:supplier) { create(:supplier) }
+        let(:params) do
+          {
+            service: {
+              quality_id: quality.id,
+              supplier_id: supplier.id,
+              datetime_of_service: DateTime.now,
+              service_number: 1
+            }
+          }
+        end
+
+        it 'Does not create a new service' do
+          expect { subject }.not_to change(Service, :count)
+        end
+      end
+    end
+  end
 end

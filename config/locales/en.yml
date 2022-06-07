@@ -126,6 +126,7 @@ en:
       service_number: 'Service number'
       supplier: 'Supplier'
       quality: 'Service type'
+      comment: 'Aditional comment'
     new:
       title: 'New service'
   suppliers:

@@ -5,6 +5,7 @@ RSpec.describe Service, type: :model do
     it { is_expected.to have_db_column(:datetime_of_service) }
     it { is_expected.to have_db_column(:status) }
     it { is_expected.to have_db_column(:service_number) }
+    it { is_expected.to have_db_column(:comment) }
   end
 
   describe 'associations' do

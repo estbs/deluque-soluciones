@@ -91,11 +91,12 @@ es:
       actions: 'Acciones'
       new_service: 'Nuevo servicio'
     form:
-      datetime_of_service: 'Fecha del servicio'
+      datetime_of_service: 'Fecha y hora del servicio'
       status: 'Estado'
       service_number: 'Numero de servicio'
       supplier: 'Proveedor'
       quality: 'Tipo de servicio'
+      comment: 'Comentarios adicionales'
     new:
       title: 'Nuevo servicio'
   suppliers:
