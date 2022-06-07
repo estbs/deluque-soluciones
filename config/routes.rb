@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   resources :suppliers
   resources :users, only: %i[index show edit update destroy]
   resources :qualities
-  resources :services, only: %i[index new create]
+  resources :services, only: %i[index new create show]
 end

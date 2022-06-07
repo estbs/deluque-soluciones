@@ -21,6 +21,10 @@ class ServicesController < ApplicationController
     end
   end
 
+  def show
+    @service = Service.find(params[:id])
+  end
+
   private
 
   def service_params
@@ -28,7 +32,8 @@ class ServicesController < ApplicationController
           .permit(
             :quality_id,
             :supplier_id,
-            :datetime_of_service
+            :datetime_of_service,
+            :comment
           )
   end
 
