@@ -18,4 +18,12 @@
         .form-outline.mb-4
           = form.label I18n.t('services.form.comment')
           = form.text_area :comment, class: 'form-control'
+    - if !@service.new_record?
+      .row.align-items-start
+        .col
+          .form-outline.mb-4
+            = form.input :status, label: I18n.t('services.form.status'), disabled: true
+        .col
+          .form-outline.mb-4
+            = form.input :service_number, label: I18n.t('services.form.service_number'), disabled: true
   = form.button :submit, class: 'btn btn-primary mt-2'

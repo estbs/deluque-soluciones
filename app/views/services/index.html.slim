@@ -21,5 +21,5 @@ table.table.table-striped
         td = service.status
         td
           = link_to(I18n.t('shared.buttons.show'), service_path(service), class: 'btn btn-primary')
-          /= link_to(I18n.t('shared.buttons.edit'), edit_quality_path(quality), class: 'btn btn-primary ms-1')
+          = link_to(I18n.t('shared.buttons.edit'), edit_service_path(service), class: 'btn btn-primary ms-1')
           /= link_to(I18n.t('shared.buttons.delete'), quality_path(quality), class: 'btn btn-danger ms-1', data: { turbo_method: :delete, turbo_confirm: I18n.t('qualities.delete.confirmation') })

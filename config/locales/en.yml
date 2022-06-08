@@ -132,6 +132,8 @@ en:
       title: 'New service'
     show:
       title: 'Show Service'
+    edit:
+      title: 'Edit Service'
   suppliers:
     title: 'Suppliers'
     index_table:

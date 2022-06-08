@@ -102,6 +102,8 @@ es:
       title: 'Nuevo servicio'
     show:
       title: 'Ver servicio'
+    edit:
+      title: 'Editar servicio'
   suppliers:
     title: 'Proveedores'
     index_table:
