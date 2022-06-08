@@ -127,4 +127,70 @@ RSpec.describe ServicesController, type: :controller do
       end
     end
   end
+
+  describe 'GET show' do
+    let(:params) do
+      { id: service.id }
+    end
+
+    let(:service) { create(:service) }
+
+    context 'When user is signed in' do
+      let(:user) { create(:user) }
+
+      before do
+        sign_in(user)
+        get :show, params: params
+      end
+
+      it 'Assigns @service' do
+        expect(assigns(:service)).to eq(service)
+      end
+
+      it 'Renders the show template' do
+        expect(response).to render_template(:show)
+      end
+    end
+
+    context 'When user is not signed in' do
+      before { get :show, params: params }
+
+      it 'Does not render the show template' do
+        expect(response).not_to render_template(:show)
+      end
+    end
+  end
+
+  describe 'GET Edit' do
+    let(:params) do
+      { id: service.id }
+    end
+
+    let(:service) { create(:service) }
+
+    context 'When user is signed in' do
+      let(:user) { create(:user) }
+
+      before do
+        sign_in(user)
+        get :edit, params: params
+      end
+
+      it 'Assigns @service' do
+        expect(assigns(:service)).to eq(service)
+      end
+
+      it 'Renders the edit template' do
+        expect(response).to render_template(:edit)
+      end
+    end
+
+    context 'When user is not signed in' do
+      before { get :edit, params: params }
+
+      it 'Does not render the edit template' do
+        expect(response).not_to render_template(:edit)
+      end
+    end
+  end
 end

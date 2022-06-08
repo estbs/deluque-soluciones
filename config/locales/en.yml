@@ -127,8 +127,13 @@ en:
       supplier: 'Supplier'
       quality: 'Service type'
       comment: 'Aditional comment'
+      user: 'User'
     new:
       title: 'New service'
+    show:
+      title: 'Show Service'
+    edit:
+      title: 'Edit Service'
   suppliers:
     title: 'Suppliers'
     index_table:

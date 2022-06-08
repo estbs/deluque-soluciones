@@ -97,8 +97,13 @@ es:
       supplier: 'Proveedor'
       quality: 'Tipo de servicio'
       comment: 'Comentarios adicionales'
+      user: 'Usuario'
     new:
       title: 'Nuevo servicio'
+    show:
+      title: 'Ver servicio'
+    edit:
+      title: 'Editar servicio'
   suppliers:
     title: 'Proveedores'
     index_table:
