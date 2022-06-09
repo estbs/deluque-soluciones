@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root 'suppliers#index'
+  root 'dashboard#index'
 
   resources :suppliers
   resources :users, only: %i[index show edit update destroy]
