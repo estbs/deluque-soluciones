@@ -193,4 +193,98 @@ RSpec.describe ServicesController, type: :controller do
       end
     end
   end
+
+  describe 'PUT update' do
+    subject { put :update, params: params }
+
+    context 'When user is signed in' do
+      let(:user) { create(:user) }
+
+      before { sign_in(user) }
+
+      let(:supplier) { create(:supplier) }
+      let(:quality) { create(:quality) }
+
+      let(:service) do
+        create(
+          :service,
+          supplier_id: supplier.id,
+          quality_id: quality.id,
+          user_id: user.id,
+          datetime_of_service: '2022-06-01 20:34:40',
+          status: 'CREATED',
+          service_number: 1,
+          comment: 'Additional comment'
+        )
+      end
+
+      context 'Valid params' do
+        let(:supplier2) { create(:supplier) }
+        let(:quality2) { create(:quality) }
+        let(:params) do
+          {
+            id: service.id,
+            service: {
+              supplier_id: supplier2.id,
+              quality_id: quality2.id
+            }
+          }
+        end
+
+        it 'Updates services' do
+          expect { subject }.to change{ service.reload.supplier_id }
+            .and change { service.reload.quality_id }
+        end
+      end
+
+      context 'Invalid params' do
+        let(:params) do
+          {
+            id: service.id,
+            service: {
+              supplier_id: nil,
+              quality_id: nil
+            }
+          }
+        end
+
+        it 'Does not update service' do
+          expect { subject }.not_to change(service, :supplier_id)
+        end
+      end
+    end
+
+    context 'When user is not signed in' do
+      let(:supplier) { create(:supplier) }
+      let(:quality) { create(:quality) }
+
+      let(:service) do
+        create(
+          :service,
+          supplier_id: supplier.id,
+          quality_id: quality.id,
+          datetime_of_service: '2022-06-01 20:34:40',
+          status: 'CREATED',
+          service_number: 1,
+          comment: 'Additional comment'
+        )
+      end
+
+      let(:supplier2) { create(:supplier) }
+      let(:quality2) { create(:quality) }
+      let(:params) do
+        {
+          id: service.id,
+          service: {
+            supplier_id: supplier2.id,
+            quality_id: quality2.id
+          }
+        }
+      end
+
+      it 'Does not update service' do
+        expect { subject }.not_to change(service, :supplier_id)
+      end
+    end
+  end
 end
