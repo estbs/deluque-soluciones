@@ -134,6 +134,8 @@ en:
       title: 'Show Service'
     edit:
       title: 'Edit Service'
+    delete:
+      confirmation: 'Are you sure to delete this service?'
   suppliers:
     title: 'Suppliers'
     index_table:

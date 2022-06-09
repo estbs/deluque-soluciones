@@ -104,6 +104,8 @@ es:
       title: 'Ver servicio'
     edit:
       title: 'Editar servicio'
+    delete:
+      confirmation: 'Desea eliminar este servicio?'
   suppliers:
     title: 'Proveedores'
     index_table:
