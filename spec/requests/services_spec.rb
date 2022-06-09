@@ -287,4 +287,28 @@ RSpec.describe ServicesController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE destroy' do
+    subject { delete :destroy, params: params }
+    let!(:service) { create(:service) }
+    let(:params) do
+      { id: service.id }
+    end
+
+    context 'When user is signed in' do
+      let(:user) { create(:user) }
+
+      before { sign_in(user) }
+
+      it 'Deletes the service' do
+        expect { subject }.to change(Service, :count).from(1).to(0)
+      end
+    end
+
+    context 'When user is not signed in' do
+      it 'Does not delete the service' do
+        expect { subject }.not_to change(Service, :count)
+      end
+    end
+  end
 end
