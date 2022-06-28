@@ -50,6 +50,7 @@ gem 'bootsnap', require: false
 
 gem 'devise'
 gem 'nested_form'
+gem 'responders'
 gem 'simple_form'
 gem 'slim-rails'
 
