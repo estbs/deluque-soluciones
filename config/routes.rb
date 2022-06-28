@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show edit update destroy]
   resources :qualities
   resources :services
+
+  namespace :api do
+    resources :qualities, only: %i[suppliers] do
+      get :suppliers
+    end
+  end
 end
