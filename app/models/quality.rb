@@ -1,6 +1,6 @@
 class Quality < ApplicationRecord
   validates :name, presence: true
 
-  has_many :supplier_qualities, dependent: :destroy
-  has_many :suppliers, through: :supplier_qualities
+  has_and_belongs_to_many :suppliers
+  has_many :services
 end

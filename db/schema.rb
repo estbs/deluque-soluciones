@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_23_224835) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_29_230834) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,13 +30,28 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_224835) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "supplier_qualities", force: :cascade do |t|
+  create_table "qualities_suppliers", force: :cascade do |t|
     t.bigint "supplier_id", null: false
     t.bigint "quality_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["quality_id"], name: "index_supplier_qualities_on_quality_id"
-    t.index ["supplier_id"], name: "index_supplier_qualities_on_supplier_id"
+    t.index ["quality_id"], name: "index_qualities_suppliers_on_quality_id"
+    t.index ["supplier_id"], name: "index_qualities_suppliers_on_supplier_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.datetime "datetime_of_service"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "quality_id"
+    t.bigint "user_id"
+    t.bigint "supplier_id"
+    t.string "service_number"
+    t.string "comment"
+    t.integer "status"
+    t.index ["quality_id"], name: "index_services_on_quality_id"
+    t.index ["supplier_id"], name: "index_services_on_supplier_id"
+    t.index ["user_id"], name: "index_services_on_user_id"
   end
 
   create_table "suppliers", force: :cascade do |t|
@@ -67,8 +82,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_224835) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "supplier_qualities", "qualities"
-  add_foreign_key "supplier_qualities", "suppliers"
+  add_foreign_key "qualities_suppliers", "qualities"
+  add_foreign_key "qualities_suppliers", "suppliers"
+  add_foreign_key "services", "qualities"
+  add_foreign_key "services", "suppliers"
+  add_foreign_key "services", "users"
   add_foreign_key "suppliers", "addresses"
   add_foreign_key "users", "addresses"
 end

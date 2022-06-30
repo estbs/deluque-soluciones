@@ -69,6 +69,7 @@ es:
       users: 'Usuarios'
       suppliers: 'Proveedores'
       qualities: 'Cualidades'
+      services: 'Servicios'
       edit_registration: 'Editar registro'
       log_out: 'Cerrar sesión'
       register: 'Registrarme'
@@ -78,6 +79,43 @@ es:
       show: 'Ver'
       delete: 'Borrar'
       sign_up: 'Registrarme'
+  services:
+    statuses:
+      created: 'Creado'
+      reviewing: 'En revisión'
+      checking: 'En visita'
+      executing: 'En ejecución'
+      paying: 'En pago'
+      finished: 'Terminado'
+      guarantee: 'En garantía'
+    title: 'Servicios'
+    index_table:
+      datetime_of_service: 'Fecha del servicio'
+      status: 'Estado'
+      service_number: 'Número de servicio'
+      user: 'Usuario'
+      supplier: 'Proveedor'
+      quality: 'Tipo de servicio'
+      actions: 'Acciones'
+      new_service: 'Nuevo servicio'
+    form:
+      datetime_of_service: 'Fecha y hora del servicio'
+      status: 'Estado'
+      service_number: 'Numero de servicio'
+      supplier: 'Proveedor'
+      quality: 'Tipo de servicio'
+      comment: 'Comentarios adicionales'
+      user: 'Usuario'
+    new:
+      title: 'Nuevo servicio'
+      button: 'Crear servicio'
+    show:
+      title: 'Ver servicio'
+    edit:
+      title: 'Editar servicio'
+      button: 'Actualizar servicio'
+    delete:
+      confirmation: 'Desea eliminar este servicio?'
   suppliers:
     title: 'Proveedores'
     index_table:
@@ -96,10 +134,13 @@ es:
       city: 'Ciudad'
       state: 'Departamento'
       country: 'Pais'
+      quialities: 'Cualidades'
     new:
       title: 'Nuevo proveedor'
+      button: 'Crear proveedor'
     edit:
       title: 'Editar proveedor'
+      button: 'Actualizar proveedor'
     show:
       title: 'Ver proveedor'
     delete:
@@ -134,6 +175,7 @@ es:
       current_password_advice: 'Necesitamos tu contraseña actual para confirmar los cambios'
     edit:
       title: 'Editar usuario'
+      button: 'Actualizar usuario'
     show:
       title: 'Ver usuario'
     delete:
@@ -150,9 +192,11 @@ es:
       description: 'Descripción'
     new:
       title: 'Nueva cualidad'
+      button: 'Crear cualidad'
     show:
       title: 'Ver cualidad'
     edit:
       title: 'Editar cualidad'
+      button: 'Actualizar cualidad'
     delete:
       confirmation: 'Desea eliminar esta cualidad?'

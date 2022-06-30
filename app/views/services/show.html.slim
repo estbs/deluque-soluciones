@@ -1,0 +1,27 @@
+h1 = I18n.t('services.show.title')
+br
+.container
+  .row
+    .col
+      strong = I18n.t('services.form.user')
+      = ": #{@service.user.name} #{@service.user.lastname}"
+  .row
+    .col
+      strong = I18n.t('services.form.quality')
+      = ": #{@service.quality.name}"
+  .row
+    .col
+      strong = I18n.t('services.form.supplier')
+      = ": #{@service.supplier.name}"
+  .row
+    .col
+      strong = I18n.t('services.form.datetime_of_service')
+      = ": #{@service.datetime_of_service.strftime("%Y-%m-%d %I:%M %p")}"
+  .row
+    .col
+      strong = I18n.t('services.form.status')
+      = ": #{get_status_from_i18n @service.status }"
+  .row
+    .col
+      strong = I18n.t('services.form.comment')
+      = ": #{@service.comment}"

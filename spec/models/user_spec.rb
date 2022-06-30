@@ -12,6 +12,7 @@ RSpec.describe User, type: :model do
 
   describe 'associations' do
     it { is_expected.to belong_to(:address) }
+    it { is_expected.to have_many(:services) }
   end
 
   describe 'validations' do

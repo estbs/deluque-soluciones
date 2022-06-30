@@ -99,6 +99,7 @@ en:
       users: 'Users'
       suppliers: 'Suppliers'
       qualities: 'Qualities'
+      services: 'Services'
       edit_registration: 'Edit registration'
       log_out: 'Logout'
       register: 'Register'
@@ -108,6 +109,43 @@ en:
       show: 'Show'
       delete: 'Delete'
       sign_up: 'Sign up'
+  services:
+    statuses:
+      created: 'Created'
+      reviewing: 'Reviewing'
+      checking: 'Checking'
+      executing: 'Executing'
+      paying: 'Paying'
+      finished: 'Finished'
+      guarantee: 'Guarantee'
+    title: 'Services'
+    index_table:
+      datetime_of_service: 'Date of service'
+      status: 'Status'
+      service_number: 'Service number'
+      user: 'User'
+      supplier: 'Supplier'
+      quality: 'Type of service'
+      actions: 'Actions'
+      new_service: 'New service'
+    form:
+      datetime_of_service: 'Date of service'
+      status: 'Status'
+      service_number: 'Service number'
+      supplier: 'Supplier'
+      quality: 'Service type'
+      comment: 'Aditional comment'
+      user: 'User'
+    new:
+      title: 'New service'
+      button: 'Create service'
+    show:
+      title: 'Show Service'
+    edit:
+      title: 'Edit Service'
+      button: 'Update service'
+    delete:
+      confirmation: 'Are you sure to delete this service?'
   suppliers:
     title: 'Suppliers'
     index_table:
@@ -126,10 +164,13 @@ en:
       city: 'City'
       state: 'State'
       country: 'Country'
+      quialities: 'Qualities'
     new:
       title: 'New Supplier'
+      button: 'Create Supplier'
     edit:
       title: 'Edit Supplier'
+      button: 'Update supplier'
     show:
       title: 'Show Supplier'
     delete:
@@ -164,6 +205,7 @@ en:
       current_password_advice: 'we need your current password to confirm your changes'
     edit:
       title: 'Edit User'
+      button: 'Update user'
     show:
       title: 'Show User'
     delete:
@@ -180,9 +222,11 @@ en:
       description: 'Description'
     new:
       title: 'New Quality'
+      button: 'Create quality'
     show:
       title: 'Show Quality'
     edit:
       title: 'Edit Quality'
+      button: 'Update quality'
     delete:
       confirmation: 'Are you sure to delete this quality?'

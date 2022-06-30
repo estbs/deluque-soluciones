@@ -1,4 +1,4 @@
-= simple_nested_form_for @supplier, data: { turbo: false } do |form|
+= simple_nested_form_for @supplier do |form|
   .form-inputs
     h3 = I18n.t('suppliers.form.main_information')
     .row.align-items-start
@@ -8,6 +8,12 @@
       .col
         .form-outline.mb-4
           = form.input :photo, label: I18n.t('suppliers.form.photo')
+    .row.align-items-start
+      .col
+        .form-outline.mb-4
+          = form.association :qualities, as: :check_boxes,
+            wrapper: :horizontal_collection_inline,
+            label: I18n.t('suppliers.form.quialities')
 
   h3 = I18n.t('suppliers.form.address')
   = form.fields_for :address do |address_form|
@@ -22,4 +28,6 @@
             = address_form.input :city, label: I18n.t('suppliers.form.city')
           .form-outline.mb-4
             = address_form.input :country, :as => :string, label: I18n.t('suppliers.form.country')
-  = form.button :submit, class: 'btn btn-primary mt-2'
+  = form.button :submit,
+    @supplier.new_record? ? I18n.t('suppliers.new.button') : I18n.t('suppliers.edit.button'),
+    class: 'btn btn-primary mt-2'

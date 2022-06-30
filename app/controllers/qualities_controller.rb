@@ -1,5 +1,6 @@
 class QualitiesController < ApplicationController
   before_action :authenticate_user!
+  before_action :assign_quality, only: %i[show edit update destroy]
 
   def index
     @qualities = Quality.all
@@ -15,30 +16,23 @@ class QualitiesController < ApplicationController
     if @quality.save
       redirect_to quality_path(@quality)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
-  def show
-    @quality = Quality.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @quality = Quality.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @quality = Quality.find(params[:id])
-
     if @quality.update(quality_params)
       redirect_to quality_path(@quality)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @quality = Quality.find(params[:id])
     @quality.destroy
     redirect_to qualities_path
   end
@@ -51,5 +45,9 @@ class QualitiesController < ApplicationController
             :name,
             :description
           )
+  end
+
+  def assign_quality
+    @quality = Quality.find(params[:id])
   end
 end

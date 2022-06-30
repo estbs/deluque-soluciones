@@ -9,6 +9,8 @@
         li.nav-item
           = link_to(I18n.t('shared.navbar.suppliers'), suppliers_path, class: 'nav-link')
         li.nav-item
+          = link_to(I18n.t('shared.navbar.services'), services_path, class: 'nav-link')
+        li.nav-item
           = link_to(I18n.t('shared.navbar.qualities'), qualities_path, class: 'nav-link')
         - if user_signed_in?
           li.nav-item.ms-auto
