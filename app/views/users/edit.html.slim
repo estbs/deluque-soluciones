@@ -31,4 +31,4 @@ h1.text-center = I18n.t('users.edit.title')
             = address_form.input :city, label: I18n.t('users.form.city')
           .form-outline.mb-4
             = address_form.input :country, :as => :string, label: I18n.t('users.form.country')
-  = form.button :submit, class: 'btn btn-primary mt-2'
+  = form.button :submit, I18n.t('users.edit.button'), class: 'btn btn-primary mt-2'

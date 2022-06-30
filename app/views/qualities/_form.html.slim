@@ -7,4 +7,6 @@
       .col
         .form-outline.mb-4
           = form.input :description, label: I18n.t('qualities.form.description')
-  = form.button :submit, class: 'btn btn-primary mt-2'
+  = form.button :submit,
+    @quality.new_record? ? I18n.t('qualities.new.button') : I18n.t('qualities.edit.button'),
+    class: 'btn btn-primary mt-2'

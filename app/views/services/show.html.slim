@@ -20,7 +20,7 @@ br
   .row
     .col
       strong = I18n.t('services.form.status')
-      = ": #{@service.status}"
+      = ": #{get_status_from_i18n @service.status }"
   .row
     .col
       strong = I18n.t('services.form.comment')

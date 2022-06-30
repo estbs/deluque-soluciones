@@ -110,6 +110,14 @@ en:
       delete: 'Delete'
       sign_up: 'Sign up'
   services:
+    statuses:
+      created: 'Created'
+      reviewing: 'Reviewing'
+      checking: 'Checking'
+      executing: 'Executing'
+      paying: 'Paying'
+      finished: 'Finished'
+      guarantee: 'Guarantee'
     title: 'Services'
     index_table:
       datetime_of_service: 'Date of service'
@@ -130,10 +138,12 @@ en:
       user: 'User'
     new:
       title: 'New service'
+      button: 'Create service'
     show:
       title: 'Show Service'
     edit:
       title: 'Edit Service'
+      button: 'Update service'
     delete:
       confirmation: 'Are you sure to delete this service?'
   suppliers:
@@ -157,8 +167,10 @@ en:
       quialities: 'Qualities'
     new:
       title: 'New Supplier'
+      button: 'Create Supplier'
     edit:
       title: 'Edit Supplier'
+      button: 'Update supplier'
     show:
       title: 'Show Supplier'
     delete:
@@ -193,6 +205,7 @@ en:
       current_password_advice: 'we need your current password to confirm your changes'
     edit:
       title: 'Edit User'
+      button: 'Update user'
     show:
       title: 'Show User'
     delete:
@@ -209,9 +222,11 @@ en:
       description: 'Description'
     new:
       title: 'New Quality'
+      button: 'Create quality'
     show:
       title: 'Show Quality'
     edit:
       title: 'Edit Quality'
+      button: 'Update quality'
     delete:
       confirmation: 'Are you sure to delete this quality?'

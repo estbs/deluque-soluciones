@@ -28,4 +28,6 @@
             = address_form.input :city, label: I18n.t('suppliers.form.city')
           .form-outline.mb-4
             = address_form.input :country, :as => :string, label: I18n.t('suppliers.form.country')
-  = form.button :submit, class: 'btn btn-primary mt-2'
+  = form.button :submit,
+    @supplier.new_record? ? I18n.t('suppliers.new.button') : I18n.t('suppliers.edit.button'),
+    class: 'btn btn-primary mt-2'

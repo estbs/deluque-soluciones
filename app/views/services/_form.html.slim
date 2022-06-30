@@ -6,6 +6,7 @@
           .form-outline.mb-4
             = form.association :quality,
               label: I18n.t('services.form.quality'),
+              include_blank: false,
               input_html: { \
                 'data-action': 'change->services#show_suppliers_by_quality', \
                 'data-services-target': 'quality' \
@@ -14,6 +15,7 @@
           .form-outline.mb-4
             = form.association :supplier,
               label: I18n.t('services.form.supplier'),
+              include_blank: false,
               input_html: { 'data-services-target': 'suppliers' }
       .row.align-items-start
         .col
@@ -28,8 +30,17 @@
         .row.align-items-start
           .col
             .form-outline.mb-4
-              = form.input :status, label: I18n.t('services.form.status'), disabled: true
+              = form.input :status,
+                collection: Service.statuses.keys.map {|status| get_status_from_i18n(status)},
+                label: I18n.t('services.form.status'),
+                disabled: true,
+                include_blank: false,
+                selected: @service.status
           .col
             .form-outline.mb-4
-              = form.input :service_number, label: I18n.t('services.form.service_number'), disabled: true
-    = form.button :submit, class: 'btn btn-primary mt-2'
+              = form.input :service_number,
+                label: I18n.t('services.form.service_number'),
+                disabled: true
+    = form.button :submit,
+      @service.new_record? ? I18n.t('services.new.button') : I18n.t('services.edit.button'),
+      class: 'btn btn-primary mt-2'

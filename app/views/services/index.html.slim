@@ -18,7 +18,7 @@ table.table.table-striped
         td = service.supplier.name
         td = service.quality.name
         td = service.datetime_of_service.strftime("%Y-%m-%d %I:%M %p")
-        td = service.status
+        td = get_status_from_i18n service.status
         td
           = link_to(I18n.t('shared.buttons.show'), service_path(service), class: 'btn btn-primary')
           = link_to(I18n.t('shared.buttons.edit'), edit_service_path(service), class: 'btn btn-primary ms-1')

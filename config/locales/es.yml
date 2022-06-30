@@ -80,6 +80,14 @@ es:
       delete: 'Borrar'
       sign_up: 'Registrarme'
   services:
+    statuses:
+      created: 'Creado'
+      reviewing: 'En revisión'
+      checking: 'En visita'
+      executing: 'En ejecución'
+      paying: 'En pago'
+      finished: 'Terminado'
+      guarantee: 'En garantía'
     title: 'Servicios'
     index_table:
       datetime_of_service: 'Fecha del servicio'
@@ -100,10 +108,12 @@ es:
       user: 'Usuario'
     new:
       title: 'Nuevo servicio'
+      button: 'Crear servicio'
     show:
       title: 'Ver servicio'
     edit:
       title: 'Editar servicio'
+      button: 'Actualizar servicio'
     delete:
       confirmation: 'Desea eliminar este servicio?'
   suppliers:
@@ -127,8 +137,10 @@ es:
       quialities: 'Cualidades'
     new:
       title: 'Nuevo proveedor'
+      button: 'Crear proveedor'
     edit:
       title: 'Editar proveedor'
+      button: 'Actualizar proveedor'
     show:
       title: 'Ver proveedor'
     delete:
@@ -163,6 +175,7 @@ es:
       current_password_advice: 'Necesitamos tu contraseña actual para confirmar los cambios'
     edit:
       title: 'Editar usuario'
+      button: 'Actualizar usuario'
     show:
       title: 'Ver usuario'
     delete:
@@ -179,9 +192,11 @@ es:
       description: 'Descripción'
     new:
       title: 'Nueva cualidad'
+      button: 'Crear cualidad'
     show:
       title: 'Ver cualidad'
     edit:
       title: 'Editar cualidad'
+      button: 'Actualizar cualidad'
     delete:
       confirmation: 'Desea eliminar esta cualidad?'
